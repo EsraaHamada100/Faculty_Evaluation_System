@@ -10,7 +10,7 @@ window.chartColors = {
 };
 
 /* Random number generator for demo purpose */
-var randomDataPoint = function(){ return Math.round(Math.random()*10000)};
+var randomDataPoint = function () { return Math.round(Math.random() * 10000) };
 
 
 //Chart.js Line Chart Example 
@@ -20,7 +20,7 @@ var lineChartConfig = {
 
 	data: {
 		labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
-		
+
 		datasets: [{
 			label: 'Current week',
 			fill: false,
@@ -37,10 +37,10 @@ var lineChartConfig = {
 			],
 		}, {
 			label: 'Previous week',
-		    borderDash: [3, 5],
+			borderDash: [3, 5],
 			backgroundColor: window.chartColors.gray,
 			borderColor: window.chartColors.gray,
-			
+
 			data: [
 				randomDataPoint(),
 				randomDataPoint(),
@@ -54,20 +54,20 @@ var lineChartConfig = {
 		}]
 	},
 	options: {
-		responsive: true,	
+		responsive: true,
 		aspectRatio: 1.5,
-		
+
 		legend: {
 			display: true,
 			position: 'bottom',
 			align: 'end',
 		},
-		
+
 		title: {
 			display: true,
 			text: 'Chart.js Line Chart Example',
-			
-		}, 
+
+		},
 		tooltips: {
 			mode: 'index',
 			intersect: false,
@@ -81,16 +81,16 @@ var lineChartConfig = {
 			bodyFontColor: window.chartColors.text,
 			titleFontColor: window.chartColors.text,
 
-            callbacks: {
-	            //Ref: https://stackoverflow.com/questions/38800226/chart-js-add-commas-to-tooltip-and-y-axis
-                label: function(tooltipItem, data) {
-	                if (parseInt(tooltipItem.value) >= 1000) {
-                        return "$" + tooltipItem.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                    } else {
-	                    return '$' + tooltipItem.value;
-                    }
-                }
-            },
+			callbacks: {
+				//Ref: https://stackoverflow.com/questions/38800226/chart-js-add-commas-to-tooltip-and-y-axis
+				label: function (tooltipItem, data) {
+					if (parseInt(tooltipItem.value) >= 1000) {
+						return "$" + tooltipItem.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+					} else {
+						return '$' + tooltipItem.value;
+					}
+				}
+			},
 
 		},
 		hover: {
@@ -106,7 +106,7 @@ var lineChartConfig = {
 				},
 				scaleLabel: {
 					display: false,
-				
+
 				}
 			}],
 			yAxes: [{
@@ -119,11 +119,11 @@ var lineChartConfig = {
 					display: false,
 				},
 				ticks: {
-		            beginAtZero: true,
-		            userCallback: function(value, index, values) {
-		                return '$' + value.toLocaleString();   //Ref: https://stackoverflow.com/questions/38800226/chart-js-add-commas-to-tooltip-and-y-axis
-		            }
-		        },
+					beginAtZero: true,
+					userCallback: function (value, index, values) {
+						return '$' + value.toLocaleString();   //Ref: https://stackoverflow.com/questions/38800226/chart-js-add-commas-to-tooltip-and-y-axis
+					}
+				},
 			}]
 		}
 	}
@@ -144,7 +144,7 @@ var barChartConfig = {
 			borderColor: window.chartColors.green,
 			borderWidth: 1,
 			maxBarThickness: 16,
-			
+
 			data: [
 				23,
 				45,
@@ -197,10 +197,10 @@ var barChartConfig = {
 					color: window.chartColors.borders,
 				},
 
-				
+
 			}]
 		}
-		
+
 	}
 }
 
@@ -211,14 +211,14 @@ var barChartConfig = {
 
 
 // Generate charts on load
-window.addEventListener('load', function(){
-	
+window.addEventListener('load', function () {
+
 	var lineChart = document.getElementById('canvas-linechart').getContext('2d');
 	window.myLine = new Chart(lineChart, lineChartConfig);
-	
+
 	var barChart = document.getElementById('canvas-barchart').getContext('2d');
 	window.myBar = new Chart(barChart, barChartConfig);
-	
 
-});	
-	
+
+});
+
