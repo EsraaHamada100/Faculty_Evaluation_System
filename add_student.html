@@ -68,7 +68,7 @@
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
 					<a class="app-logo" href="index.html"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> FMS | ADMIN</span></a>
+							class="logo-text"> | ADMIN</span></a>
 
 				</div>
 				<!--//app-branding-->
@@ -106,20 +106,41 @@
 						<!--//nav-item-->
 						<li class="nav-item has-submenu">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-4"
+								aria-expanded="false" aria-controls="submenu-4">
+								<span class="nav-icon"><i class="fa fa-users"></i></span>
+								<span class="nav-link-text">Teacher</span>
+								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
+								<!--//submenu-arrow-->
+							</a>
+							<!--//nav-link-->
+							<div id="submenu-4" class="collapse submenu submenu-4" data-parent="#menu-accordion">
+								<ul class="submenu-list list-unstyled">
+									<li class="submenu-item"><a class="submenu-link" href="add_class.html">Add
+											Teacher</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="manage_class.html">Manage
+											Teacher</a></li>
+								</ul>
+							</div>
+							<!--//co_teacher-->
+						</li>
+						<!--//nav-item-->
+						<li class="nav-item has-submenu">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-3"
 								aria-expanded="false" aria-controls="submenu-3">
-								<span class="nav-icon"><i class="fa fa-school"></i></span>
-								<span class="nav-link-text">Class</span>
+								<span class="nav-icon"><i class="fa fa-users"></i></span>
+								<span class="nav-link-text">Co_Teacher</span>
 								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
 								<!--//submenu-arrow-->
 							</a>
 							<!--//nav-link-->
 							<div id="submenu-3" class="collapse submenu submenu-3" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="add_class.html">Add Class</a>
-									</li>
+									<li class="submenu-item"><a class="submenu-link" href="add_class.html">Add
+											Co_Teacher</a></li>
 									<li class="submenu-item"><a class="submenu-link" href="manage_class.html">Manage
-											Class</a></li>
+											Co_Teacher</a></li>
 								</ul>
 							</div>
 						</li>
@@ -153,14 +174,7 @@
 							<!--//nav-link-->
 						</li>
 						<!--//nav-item-->
-						<li class="nav-item">
-							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="comments.html">
-								<span class="nav-icon"><i class="fa fa-comments"></i></span>
-								<span class="nav-link-text">Comments</span>
-							</a>
-							<!--//nav-link-->
-						</li>
+						
 						<!--//nav-item-->
 					</ul>
 					<!--//app-menu-->
