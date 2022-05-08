@@ -5,9 +5,10 @@
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = factory());
-}(this, (function () { 'use strict';
+    typeof define === 'function' && define.amd ? define(factory) :
+      (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.bootstrap = factory());
+}(this, (function () {
+  'use strict';
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -114,8 +115,8 @@
 
 
     var _window$getComputedSt = window.getComputedStyle(element),
-        transitionDuration = _window$getComputedSt.transitionDuration,
-        transitionDelay = _window$getComputedSt.transitionDelay;
+      transitionDuration = _window$getComputedSt.transitionDuration,
+      transitionDelay = _window$getComputedSt.transitionDelay;
 
     var floatTransitionDuration = parseFloat(transitionDuration);
     var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
@@ -206,7 +207,7 @@
   };
 
   var noop = function noop() {
-    return function () {};
+    return function () { };
   };
 
   var reflow = function reflow(element) {
@@ -215,7 +216,7 @@
 
   var getjQuery = function getjQuery() {
     var _window = window,
-        jQuery = _window.jQuery;
+      jQuery = _window.jQuery;
 
     if (jQuery && !document.body.hasAttribute('data-no-jquery')) {
       return jQuery;
@@ -488,9 +489,9 @@
     }
 
     var _normalizeParams = normalizeParams(originalTypeEvent, handler, delegationFn),
-        delegation = _normalizeParams[0],
-        originalHandler = _normalizeParams[1],
-        typeEvent = _normalizeParams[2];
+      delegation = _normalizeParams[0],
+      originalHandler = _normalizeParams[1],
+      typeEvent = _normalizeParams[2];
 
     var events = getEvent(element);
     var handlers = events[typeEvent] || (events[typeEvent] = {});
@@ -545,9 +546,9 @@
       }
 
       var _normalizeParams2 = normalizeParams(originalTypeEvent, handler, delegationFn),
-          delegation = _normalizeParams2[0],
-          originalHandler = _normalizeParams2[1],
-          typeEvent = _normalizeParams2[2];
+        delegation = _normalizeParams2[0],
+        originalHandler = _normalizeParams2[1],
+        typeEvent = _normalizeParams2[2];
 
       var inNamespace = typeEvent !== originalTypeEvent;
       var events = getEvent(element);
@@ -699,7 +700,7 @@
       Data.removeData(this._element, DATA_KEY);
       this._element = null;
     } // Private
-    ;
+      ;
 
     _proto._getRootElement = function _getRootElement(element) {
       return getElementFromSelector(element) || element.closest("." + CLASSNAME_ALERT);
@@ -734,7 +735,7 @@
 
       EventHandler.trigger(element, EVENT_CLOSED);
     } // Static
-    ;
+      ;
 
     Alert.jQueryInterface = function jQueryInterface(config) {
       return this.each(function () {
@@ -841,7 +842,7 @@
       Data.removeData(this._element, DATA_KEY$1);
       this._element = null;
     } // Static
-    ;
+      ;
 
     Button.jQueryInterface = function jQueryInterface(config) {
       return this.each(function () {
@@ -1263,7 +1264,7 @@
       this._activeElement = null;
       this._indicatorsElement = null;
     } // Private
-    ;
+      ;
 
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default, config);
@@ -1555,7 +1556,7 @@
         this.cycle();
       }
     } // Static
-    ;
+      ;
 
     Carousel.carouselInterface = function carouselInterface(element, config) {
       var data = Data.getData(element, DATA_KEY$2);
@@ -1913,7 +1914,7 @@
       this._triggerArray = null;
       this._isTransitioning = null;
     } // Private
-    ;
+      ;
 
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$1, config);
@@ -1966,7 +1967,7 @@
         elem.setAttribute('aria-expanded', isOpen);
       });
     } // Static
-    ;
+      ;
 
     Collapse.collapseInterface = function collapseInterface(element, config) {
       var data = Data.getData(element, DATA_KEY$3);
@@ -2213,9 +2214,9 @@
     // Firefox want us to check `-x` and `-y` variations as well
 
     var _getStyleComputedProp = getStyleComputedProperty(element),
-        overflow = _getStyleComputedProp.overflow,
-        overflowX = _getStyleComputedProp.overflowX,
-        overflowY = _getStyleComputedProp.overflowY;
+      overflow = _getStyleComputedProp.overflow,
+      overflowX = _getStyleComputedProp.overflowX,
+      overflowY = _getStyleComputedProp.overflowY;
 
     if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {
       return element;
@@ -2532,7 +2533,7 @@
       } else {
         rect = element.getBoundingClientRect();
       }
-    } catch (e) {}
+    } catch (e) { }
 
     var result = {
       left: rect.left,
@@ -2720,8 +2721,8 @@
       // In case of HTML, we need a different computation
       if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
         var _getWindowSizes = getWindowSizes(popper.ownerDocument),
-            height = _getWindowSizes.height,
-            width = _getWindowSizes.width;
+          height = _getWindowSizes.height,
+          width = _getWindowSizes.width;
 
         boundaries.top += offsets.top - offsets.marginTop;
         boundaries.bottom = height + offsets.top;
@@ -2746,7 +2747,7 @@
 
   function getArea(_ref) {
     var width = _ref.width,
-        height = _ref.height;
+      height = _ref.height;
 
     return width * height;
   }
@@ -2800,7 +2801,7 @@
 
     var filteredAreas = sortedAreas.filter(function (_ref2) {
       var width = _ref2.width,
-          height = _ref2.height;
+        height = _ref2.height;
       return width >= popper.clientWidth && height >= popper.clientHeight;
     });
 
@@ -3038,7 +3039,7 @@
   function isModifierEnabled(modifiers, modifierName) {
     return modifiers.some(function (_ref) {
       var name = _ref.name,
-          enabled = _ref.enabled;
+        enabled = _ref.enabled;
       return enabled && name === modifierName;
     });
   }
@@ -3310,10 +3311,10 @@
    */
   function getRoundedOffsets(data, shouldRound) {
     var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
     var round = Math.round,
-        floor = Math.floor;
+      floor = Math.floor;
 
     var noRound = function noRound(v) {
       return v;
@@ -3349,7 +3350,7 @@
    */
   function computeStyle(data, options) {
     var x = options.x,
-        y = options.y;
+      y = options.y;
     var popper = data.offsets.popper;
 
     // Remove this legacy support in Popper.js v2
@@ -3390,7 +3391,7 @@
     // `x` to `top` to make the popper grow towards its top instead of
     // its bottom.
     var left = void 0,
-        top = void 0;
+      top = void 0;
     if (sideA === 'bottom') {
       // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
       // and not the bottom of the html element
@@ -3502,8 +3503,8 @@
 
     var placement = data.placement.split('-')[0];
     var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
 
     var isVertical = ['left', 'right'].indexOf(placement) !== -1;
 
@@ -3730,8 +3731,8 @@
    */
   function keepTogether(data) {
     var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
 
     var placement = data.placement.split('-')[0];
     var floor = Math.floor;
@@ -3849,25 +3850,25 @@
       var measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
       var mergeWithPrevious = false;
       return op
-      // This aggregates any `+` or `-` sign that aren't considered operators
-      // e.g.: 10 + +5 => [10, +, +5]
-      .reduce(function (a, b) {
-        if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
-          a[a.length - 1] = b;
-          mergeWithPrevious = true;
-          return a;
-        } else if (mergeWithPrevious) {
-          a[a.length - 1] += b;
-          mergeWithPrevious = false;
-          return a;
-        } else {
-          return a.concat(b);
-        }
-      }, [])
-      // Here we convert the string values into number values (in px)
-      .map(function (str) {
-        return toValue(str, measurement, popperOffsets, referenceOffsets);
-      });
+        // This aggregates any `+` or `-` sign that aren't considered operators
+        // e.g.: 10 + +5 => [10, +, +5]
+        .reduce(function (a, b) {
+          if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
+            a[a.length - 1] = b;
+            mergeWithPrevious = true;
+            return a;
+          } else if (mergeWithPrevious) {
+            a[a.length - 1] += b;
+            mergeWithPrevious = false;
+            return a;
+          } else {
+            return a.concat(b);
+          }
+        }, [])
+        // Here we convert the string values into number values (in px)
+        .map(function (str) {
+          return toValue(str, measurement, popperOffsets, referenceOffsets);
+        });
     });
 
     // Loop trough the offsets arrays and execute the operations
@@ -3893,9 +3894,9 @@
   function offset(data, _ref) {
     var offset = _ref.offset;
     var placement = data.placement,
-        _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
+      _data$offsets = data.offsets,
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
 
     var basePlacement = placement.split('-')[0];
 
@@ -3947,8 +3948,8 @@
     var transformProp = getSupportedPropertyName('transform');
     var popperStyles = data.instance.popper.style; // assignment to help minification
     var top = popperStyles.top,
-        left = popperStyles.left,
-        transform = popperStyles[transformProp];
+      left = popperStyles.left,
+      transform = popperStyles[transformProp];
 
     popperStyles.top = '';
     popperStyles.left = '';
@@ -4010,8 +4011,8 @@
     // if shift shiftvariation is specified, run the modifier
     if (shiftvariation) {
       var _data$offsets = data.offsets,
-          reference = _data$offsets.reference,
-          popper = _data$offsets.popper;
+        reference = _data$offsets.reference,
+        popper = _data$offsets.popper;
 
       var isVertical = ['bottom', 'top'].indexOf(basePlacement) !== -1;
       var side = isVertical ? 'left' : 'top';
@@ -4077,8 +4078,8 @@
     var placement = data.placement;
     var basePlacement = placement.split('-')[0];
     var _data$offsets = data.offsets,
-        popper = _data$offsets.popper,
-        reference = _data$offsets.reference;
+      popper = _data$offsets.popper,
+      reference = _data$offsets.reference;
 
     var isHoriz = ['left', 'right'].indexOf(basePlacement) !== -1;
 
@@ -4499,7 +4500,7 @@
      * Access Popper.js instance with `data.instance`.
      * @prop {onCreate}
      */
-    onCreate: function onCreate() {},
+    onCreate: function onCreate() { },
 
     /**
      * Callback called when the popper is updated. This callback is not called
@@ -4509,7 +4510,7 @@
      * Access Popper.js instance with `data.instance`.
      * @prop {onUpdate}
      */
-    onUpdate: function onUpdate() {},
+    onUpdate: function onUpdate() { },
 
     /**
      * List of modifiers used to modify the offsets before they are applied to the popper.
@@ -4579,10 +4580,10 @@
           name: name
         }, _this.options.modifiers[name]);
       })
-      // sort the modifiers by order
-      .sort(function (a, b) {
-        return a.order - b.order;
-      });
+        // sort the modifiers by order
+        .sort(function (a, b) {
+          return a.order - b.order;
+        });
 
       // modifiers have the ability to execute arbitrary code when Popper.js get inited
       // such code is executed in the same order of its modifier
@@ -4893,7 +4894,7 @@
         this._popper.scheduleUpdate();
       }
     } // Private
-    ;
+      ;
 
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
@@ -4980,7 +4981,7 @@
 
       return _extends({}, popperConfig, this._config.popperConfig);
     } // Static
-    ;
+      ;
 
     Dropdown.dropdownInterface = function dropdownInterface(element, config) {
       var data = Data.getData(element, DATA_KEY$4);
@@ -5386,7 +5387,7 @@
     _proto.handleUpdate = function handleUpdate() {
       this._adjustDialog();
     } // Private
-    ;
+      ;
 
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$3, config);
@@ -5622,9 +5623,9 @@
         this.hide();
       }
     } // ----------------------------------------------------------------------
-    // the following methods are used to handle overflowing modals
-    // ----------------------------------------------------------------------
-    ;
+      // the following methods are used to handle overflowing modals
+      // ----------------------------------------------------------------------
+      ;
 
     _proto._adjustDialog = function _adjustDialog() {
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
@@ -5718,7 +5719,7 @@
       document.body.removeChild(scrollDiv);
       return scrollbarWidth;
     } // Static
-    ;
+      ;
 
     Modal.jQueryInterface = function jQueryInterface(config, relatedTarget) {
       return this.each(function () {
@@ -6264,7 +6265,7 @@
         this._popper.scheduleUpdate();
       }
     } // Protected
-    ;
+      ;
 
     _proto.isWithContent = function isWithContent() {
       return Boolean(this.getTitle());
@@ -6330,7 +6331,7 @@
 
       return title;
     } // Private
-    ;
+      ;
 
     _proto._getPopperConfig = function _getPopperConfig(attachment) {
       var _this3 = this;
@@ -6608,7 +6609,7 @@
       this.show();
       this.config.animation = initConfigAnimation;
     } // Static
-    ;
+      ;
 
     Tooltip.jQueryInterface = function jQueryInterface(config) {
       return this.each(function () {
@@ -6773,7 +6774,7 @@
       this.setElementContent(SelectorEngine.findOne(SELECTOR_CONTENT, tip), content);
       tip.classList.remove(CLASS_NAME_FADE$2, CLASS_NAME_SHOW$4);
     } // Private
-    ;
+      ;
 
     _proto._addAttachmentClass = function _addAttachmentClass(attachment) {
       this.getTipElement().classList.add(CLASS_PREFIX$1 + "-" + attachment);
@@ -6795,7 +6796,7 @@
         });
       }
     } // Static
-    ;
+      ;
 
     Popover.jQueryInterface = function jQueryInterface(config) {
       return this.each(function () {
@@ -7000,7 +7001,7 @@
       this._activeTarget = null;
       this._scrollHeight = null;
     } // Private
-    ;
+      ;
 
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$6, typeof config === 'object' && config ? config : {});
@@ -7114,7 +7115,7 @@
         return node.classList.remove(CLASS_NAME_ACTIVE$2);
       });
     } // Static
-    ;
+      ;
 
     ScrollSpy.jQueryInterface = function jQueryInterface(config) {
       return this.each(function () {
@@ -7286,7 +7287,7 @@
       Data.removeData(this._element, DATA_KEY$9);
       this._element = null;
     } // Private
-    ;
+      ;
 
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
@@ -7351,7 +7352,7 @@
         callback();
       }
     } // Static
-    ;
+      ;
 
     Tab.jQueryInterface = function jQueryInterface(config) {
       return this.each(function () {
@@ -7550,7 +7551,7 @@
       this._element = null;
       this._config = null;
     } // Private
-    ;
+      ;
 
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$7, Manipulator.getDataAttributes(this._element), typeof config === 'object' && config ? config : {});
@@ -7570,7 +7571,7 @@
       clearTimeout(this._timeout);
       this._timeout = null;
     } // Static
-    ;
+      ;
 
     Toast.jQueryInterface = function jQueryInterface(config) {
       return this.each(function () {

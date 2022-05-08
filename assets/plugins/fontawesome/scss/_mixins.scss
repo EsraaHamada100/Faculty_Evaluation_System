@@ -44,6 +44,7 @@
 // Credit: HTML5 Boilerplate
 
 @mixin sr-only-focusable {
+
   &:active,
   &:focus {
     clip: auto;
