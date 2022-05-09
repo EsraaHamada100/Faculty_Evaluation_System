@@ -27,17 +27,17 @@
 					<h2 class="auth-heading text-center mb-5">Log in</h2>
 					<div class="auth-form-container text-left">
 						<?php $checked = "index.html" ;?>
-						<form class="auth-form login-form" action= 'index.html' method="post">
+						<form class="auth-form login-form" action= 'check_login_data.php' method="post">
 							<div class="email mb-3">
 								<label class="sr-only" for="signin-email">Username</label>
-								<input id="signin-email" name="signin-email" type="text"
+								<input id="signin-email" name="userName" type="text"
 									class="form-control signin-email" placeholder="Username">
 							</div>
 							<!--//form-group-->
 							
 							<div class="password mb-3">
 								<label class="sr-only" for="signin-password">Password</label>
-								<input id="signin-password" name="signin-password" type="password"
+								<input id="signin-password" name="password" type="password"
 									class="form-control signin-password" placeholder="Password">
 								<div class="extra mt-3 row justify-content-between">
 
@@ -83,7 +83,7 @@
 							</div>
 							<!--//form-group-->
 							<div class="text-center">
-								<button type="submit" class="btn app-btn-primary btn-block theme-btn mx-auto" action="<?php echo $checked?>">
+								<button type="submit" class="btn app-btn-primary btn-block theme-btn mx-auto" >
 									LogIn
 								</button>
 							</div>
