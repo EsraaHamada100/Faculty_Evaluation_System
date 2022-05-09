@@ -41,13 +41,13 @@
 									class="form-control signin-password" placeholder="Password">
 								<div class="extra mt-3 row justify-content-between">
 
-									<!--//col-6-->
+									<!-- //col-6
 
 									<div class="d-flex justify-content-between"><!--forgot-password text-left-->
 										<!-- <a href="teacher.html" >teacher</a>
 										<a href="co_teacher.html" >co-teacher</a>
 										<a href="student.html">Student</a> -->
-										<div>
+										<!-- <div>
 											<input id="option-one" name="radio" value="one" checked="checked" type="radio">
 											<label for="option-one">student</label>
 										</div>
@@ -64,8 +64,8 @@
 											<label for="option-four">admin</label>
 										</div>
 
-									</div>
-									<br><br>
+									</div> 
+									<br><br> -->
 									<!-- third row : remember me -->
 									<div class="col-6">
 										<div class="form-check">
