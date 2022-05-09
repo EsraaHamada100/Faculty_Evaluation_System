@@ -11,6 +11,8 @@ function findUser($tableName, $pageLink){
             if($row['username'] == $_POST["userName"] && $row['password'] == $_POST["password"]){
                 // navigate to this page
                 header("Location: $pageLink");
+                session_start();
+                $_SESSION['type'] = $tableName ;
                 exit();
             }
         }
@@ -20,7 +22,7 @@ findUser('admin', 'index.html');
 findUser('teacher','teacher.html');
 findUser('co_teacher', 'co_teacher.html');
 findUser('student', 'student.html');
-header("Location: login.php");
+$_SERVER['PHP_SELF'];
 
 // echo $_POST['userName'];
 // echo $_POST['password'];

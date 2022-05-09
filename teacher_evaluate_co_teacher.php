@@ -104,7 +104,7 @@
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="evaluate_co_teacher_from_teacher.php">
+							<a class="nav-link" href="teacher_evaluate_co_teacher.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 							</a>
