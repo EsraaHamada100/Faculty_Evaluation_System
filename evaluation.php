@@ -44,7 +44,7 @@
 									role="button" aria-expanded="false">
 									<img src="assets/images/admin.png" alt="" srcset=""></a>
 								<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-									<li><a class="dropdown-item" href="account.php">Account</a></li>
+									<!-- <li><a class="dropdown-item" href="account.php">Account</a></li> -->
 									<li>
 										<hr class="dropdown-divider">
 									</li>
@@ -119,7 +119,7 @@
 								<ul class="submenu-list list-unstyled">
 									<li class="submenu-item"><a class="submenu-link" href="add_teacher.php">Add
 											Teacher</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="manage_class.php">Manage
+									<li class="submenu-item"><a class="submenu-link" href="manage_teacher.php">Manage
 											Teacher</a></li>
 								</ul>
 							</div>
