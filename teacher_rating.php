@@ -98,7 +98,7 @@
 						<!-- See comments -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher.html">
+							<a class="nav-link" href="teacher_comments.php">
 								<span class="nav-icon"><i class="fa fa-comment"></i></span>
 								<span class="nav-link-text">See Comments</span>
 							</a>
@@ -149,7 +149,7 @@
 											<tbody>
 											<?php
 												
-													$name = "Esraa" ;
+													
 													$result = getTeacherRatingData();
 													while($row = mysqli_fetch_array($result)){
 															echo '<tr>

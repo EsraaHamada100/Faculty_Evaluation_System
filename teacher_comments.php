@@ -1,3 +1,4 @@
+<?php require "global.php"; ?>
 <!DOCTYPE html>
 <!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
@@ -126,70 +127,37 @@
 
 				<h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-comment"></i></span> Comments</h1>
 
-
-
                 <div class="wrapper">
-    <div class="box">
-      <i class="fas fa-quote-left quote"></i>
-      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-      <div class="content">
-        <div class="info">
-          <!-- <div class="name">Alex Smith</div> -->
-          <div class="job">Student</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-        <div class="image">
-          <!-- <img src="images/profile-1.jpeg" alt=""> -->
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <i class="fas fa-quote-left quote"></i>
-      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-      <div class="content">
-        <div class="info">
-          <!-- <div class="name">Steven Chris</div> -->
-          <div class="job">Student</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-        <div class="image">
-        <!-- <span id="hi"class="comment-icon"><i class="fa fa-comment fa-5x"></i></span> -->
-          <!-- <img src="images/profile-2.jpeg" alt=""> -->
-        </div>
-      </div>
-    </div>
-    <div class="box">
-      <i class="fas fa-quote-left  quote"></i>
-      <p>Lorem aliasry ipsum dolor sits ametans, consectetur adipisicing elitits. Expedita reiciendis itaque placeat thuratu, quasi yiuos repellendus repudiandae deleniti ideas fuga molestiae, alias.</p>
-      <div class="content">
-        <div class="info">
-          <!-- <div class="name">Kristina Bellis</div> -->
-          <div class="job">Student</div>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="far fa-star"></i>
-          </div>
-        </div>
-        <div class="image">
-          <!-- <img src="images/profile-3.jpeg" alt=""> -->
-        </div>
-      </div>
-    </div>
+
+				
+
+
+
+					<?php
+					$result = getTeacherComments();
+					while($row = mysqli_fetch_array($result)){
+					echo  '<div class="box">
+					<i class="fas fa-quote-left quote"></i>
+					<p>'.$row['content'].'</p>
+					<div class="content">
+					<div class="info">
+					
+					<div class="stars">
+									<i class=""></i>
+									<i class=""></i>
+									<i class=""></i>
+									<i class=""></i>
+									<i class=""></i>
+									
+								</div>
+								<div class="job">'.$row['username'].'</div>
+							</div>
+						</div>
+						
+					</div>';
+					}
+					?>
+
   </div>
 
 				<!--//row-->

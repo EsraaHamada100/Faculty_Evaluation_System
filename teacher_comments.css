@@ -24,6 +24,8 @@ html,body{
   justify-content: space-between;
 }
 .wrapper .box{
+ /* the height of the box */
+  height: 200px;
   background: #fff;
   width: calc(33% - 10px);
   padding: 25px;
