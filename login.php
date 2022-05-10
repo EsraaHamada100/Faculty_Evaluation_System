@@ -26,7 +26,7 @@
 					<div class="app-auth-branding mb-4"></div>
 					<h2 class="auth-heading text-center mb-5">Log in</h2>
 					<div class="auth-form-container text-left">
-						<?php $checked = "index.html" ;?>
+						<?php $checked = "index.php" ;?>
 						<form class="auth-form login-form" action= 'check_login_data.php' method="post">
 							<div class="email mb-3">
 								<label class="sr-only" for="signin-email">Username</label>

@@ -42,11 +42,11 @@
 									role="button" aria-expanded="false">
 									<img src="assets/images/admin.png" alt="" srcset=""></a>
 								<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-									<li><a class="dropdown-item" href="account.html">Account</a></li>
+									<li><a class="dropdown-item" href="account.php">Account</a></li>
 									<li>
 										<hr class="dropdown-divider">
 									</li>
-									<li><a class="dropdown-item" href="login.html">Log Out</a></li>
+									<li><a class="dropdown-item" href="login.php">Log Out</a></li>
 								</ul>
 							</div>
 							<!--//app-user-dropdown-->
@@ -66,7 +66,7 @@
 			<div class="sidepanel-inner d-flex flex-column">
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
-					<a class="app-logo" href="co_teacher.html"><i class="fa fa-graduation-cap fa-2x"></i><span
+					<a class="app-logo" href="co_teacher.php"><i class="fa fa-graduation-cap fa-2x"></i><span
 							class="logo-text"> FMS | CO-TEACHER</span></a>
 
 				</div>
@@ -76,7 +76,7 @@
 				<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="co_teacher.html">
+							<a class="nav-link" href="co_teacher.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
