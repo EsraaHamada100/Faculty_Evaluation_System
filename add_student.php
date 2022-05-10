@@ -216,7 +216,7 @@ require 'global.php';
 										<input type="password" name="password" class="form-control" id="setting-input-3" value="">
 									</div>
 
-									<button type="submit"  class="btn app-btn-primary">Save</button>
+									<button type="submit" action="check_add_student.php"  class="btn app-btn-primary">Save</button>
 								</form>
 							</div>
 							<!--//app-card-body-->
@@ -245,31 +245,29 @@ require 'global.php';
 	<script src="assets/js/app.js"></script>
 
 	<!--php-->
-	<?php
-	$dbServerName = "localhost";
-    $dbUserName = "root";
-    $dbPassword = "";
-    $dbName = "automated_teacher_evaluation";
-    $connection = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
-    $string1='INSERT INTO student(username, password, adminID)VALUES("Fady",123,'.$_SESSION["id"].')';
-	$ID = "";
-	$username ="";
-	$password =""; 
-	if(isset($_POST['ID'])){
-		$ID= $_POST[' ID'];
-	}
-	if(isset($_POST['username'])){
-		$username = $_POST['username'];
-	}
-	if(isset($_POST['Password'])){
-		$password = $_POST['Password'];
-	}
+	<!--?php
+// $string = 'INSERT INTO student(username, password, adminID) VALUES ("Eman",123,'.$_SESSION["id"].')';
+// $sql = $string ;
+// mysqli_query($GLOBALS['connection'], $sql);
+// 	$ID = "";
+// 	$username ="";
+// 	$password =""; 
+	
+// 	if(isset($_POST['ID'])){
+// 		$ID= $_POST[' ID'];
+// 	}
+// 	if(isset($_POST['username'])){
+// 		$username = $_POST['username'];
+// 	}
+// 	if(isset($_POST['Password'])){
+// 		$password = $_POST['Password'];
+// 	}
 
-	if(isset($_POST['Save'])){
-		$sqls = $string1;
-		$result=mysqli_query($connection , $sqls);
-		header("location:http://localhost/Faculty_Evaluation_System/add_student.php");}
-?>
+// 	 if(isset($_POST['Save'])){
+// 	// 	$sqls = $string1;
+// 	// 	$result=mysqli_query($connection , $sqls);
+//  	header("location:check_add_student.php");}
+// ?>
 </body>
 
 </html>
