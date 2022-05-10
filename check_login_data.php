@@ -21,7 +21,7 @@ function findUser($tableName, $pageLink){
         }
     }
 }
-findUser('admin', 'index.html');
+findUser('admin', 'index.php');
 findUser('teacher','teacher.html');
 findUser('co_teacher', 'co_teacher.html');
 findUser('student', 'student.html');

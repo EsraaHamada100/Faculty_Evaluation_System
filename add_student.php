@@ -1,3 +1,6 @@
+<?php
+require 'global.php';
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -248,7 +251,7 @@
     $dbPassword = "";
     $dbName = "automated_teacher_evaluation";
     $connection = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
-
+    $string1='INSERT INTO student(username, password, adminID)VALUES("Fady",123,'.$_SESSION["id"].')';
 	$ID = "";
 	$username ="";
 	$password =""; 
@@ -261,10 +264,10 @@
 	if(isset($_POST['Password'])){
 		$password = $_POST['Password'];
 	}
-	$sqls="";
+
 	if(isset($_POST['Save'])){
-		$sqls = "insert into student value ($ID ,'$username' ,'$password')";
-		mysqli_query($con , $sqls);
+		$sqls = $string1;
+		$result=mysqli_query($connection , $sqls);
 		header("location:http://localhost/Faculty_Evaluation_System/add_student.php");}
 ?>
 </body>
