@@ -43,11 +43,11 @@
 									role="button" aria-expanded="false">
 									<img src="assets/images/admin.png" alt="" srcset=""></a>
 								<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-									<li><a class="dropdown-item" href="account.html">Account</a></li>
+									<li><a class="dropdown-item" href="account.php">Account</a></li>
 									<li>
 										<hr class="dropdown-divider">
 									</li>
-									<li><a class="dropdown-item" href="login.html">Log Out</a></li>
+									<li><a class="dropdown-item" href="login.php">Log Out</a></li>
 								</ul>
 							</div>
 							<!--//app-user-dropdown-->
@@ -67,7 +67,7 @@
 			<div class="sidepanel-inner d-flex flex-column">
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
-					<a class="app-logo" href="index.html"><i class="fa fa-graduation-cap fa-2x"></i><span
+					<a class="app-logo" href="index.php"><i class="fa fa-graduation-cap fa-2x"></i><span
 							class="logo-text"> | ADMIN</span></a>
 
 				</div>
@@ -77,7 +77,7 @@
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="index.html">
+							<a class="nav-link" href="index.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
@@ -96,9 +96,9 @@
 							<!--//nav-link-->
 							<div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="add_student.html">Add
+									<li class="submenu-item"><a class="submenu-link" href="add_student.php">Add
 											Student</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="manage_student.html">Manage
+									<li class="submenu-item"><a class="submenu-link" href="manage_student.php">Manage
 											Student</a></li>
 								</ul>
 							</div>
@@ -116,9 +116,9 @@
 							<!--//nav-link-->
 							<div id="submenu-4" class="collapse submenu submenu-4" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="add_teacher.html">Add
+									<li class="submenu-item"><a class="submenu-link" href="add_teacher.php">Add
 											Teacher</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="manage_teacher.html">Manage
+									<li class="submenu-item"><a class="submenu-link" href="manage_teacher.php">Manage
 											Teacher</a></li>
 								</ul>
 							</div>
@@ -137,9 +137,9 @@
 							<!--//nav-link-->
 							<div id="submenu-3" class="collapse submenu submenu-3" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="add_co-teacher.html">Add
+									<li class="submenu-item"><a class="submenu-link" href="add_co-teacher.php">Add
 											Co_Teacher</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="mange_co-teacher.html">Manage
+									<li class="submenu-item"><a class="submenu-link" href="mange_co-teacher.php">Manage
 											Co_Teacher</a></li>
 								</ul>
 							</div>
@@ -157,9 +157,9 @@
 							<!--//nav-link-->
 							<div id="submenu-5" class="collapse submenu submenu-5" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="category.html">Manage
+									<li class="submenu-item"><a class="submenu-link" href="category.php">Manage
 											Category</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="add_questionaire.html">Manage
+									<li class="submenu-item"><a class="submenu-link" href="add_questionaire.php">Manage
 											Questionaire</a></li>
 								</ul>
 							</div>
@@ -167,7 +167,7 @@
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="evaluation.html">
+							<a class="nav-link" href="evaluation.php">
 								<span class="nav-icon"><i class="fa fa-table"></i></span>
 								<span class="nav-link-text">Evaluation</span>
 							</a>
@@ -213,7 +213,7 @@
 										<input type="password" class="form-control" id="setting-input-3" value="">
 									</div>
 
-									<button type="submit" class="btn app-btn-primary">Save</button>
+									<button type="submit"  class="btn app-btn-primary">Save</button>
 								</form>
 							</div>
 							<!--//app-card-body-->
@@ -240,6 +240,9 @@
 
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>
+
+	<!--php-->
+
 
 </body>
 
