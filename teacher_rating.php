@@ -69,113 +69,49 @@
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
 					<a class="app-logo" href="index.html"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> | ADMIN</span></a>
+							class="logo-text">FMS | TEACHER</span></a>
 
 				</div>
 				<!--//app-branding-->
 
 				<nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
-					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
+				<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="index.html">
+							<a class="nav-link" href="teacher.html">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
 							<!--//nav-link-->
 						</li>
-						<!--//nav-item-->
-						<li class="nav-item has-submenu">
+						<!-- nav item -->
+						<!-- view rating -->
+						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2"
-								aria-expanded="false" aria-controls="submenu-2">
-								<span class="nav-icon"><i class="fa fa-users"></i></span>
-								<span class="nav-link-text">Student</span>
-								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
-								<!--//submenu-arrow-->
+							<a class="nav-link" href="teacher.html">
+								<span class="nav-icon"><i class="fa fa-star"></i></span>
+								<span class="nav-link-text">View Rating</span>
 							</a>
 							<!--//nav-link-->
-							<div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
-								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="add_student.html">Add
-											Student</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="manage_student.html">Manage
-											Student</a></li>
-								</ul>
-							</div>
 						</li>
-						<!--//nav-item-->
-						<li class="nav-item has-submenu">
+						<!-- See comments -->
+						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-4"
-								aria-expanded="false" aria-controls="submenu-4">
-								<span class="nav-icon"><i class="fa fa-users"></i></span>
-								<span class="nav-link-text">Teacher</span>
-								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
-								<!--//submenu-arrow-->
+							<a class="nav-link" href="teacher.html">
+								<span class="nav-icon"><i class="fa fa-comment"></i></span>
+								<span class="nav-link-text">See Comments</span>
 							</a>
 							<!--//nav-link-->
-							<div id="submenu-4" class="collapse submenu submenu-4" data-parent="#menu-accordion">
-								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="add_teacher.html">Add
-											Teacher</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="manage_class.html">Manage
-											Teacher</a></li>
-								</ul>
-							</div>
-							<!--//co_teacher-->
-						</li>
-						<!--//nav-item-->
-						<li class="nav-item has-submenu">
-							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-3"
-								aria-expanded="false" aria-controls="submenu-3">
-								<span class="nav-icon"><i class="fa fa-users"></i></span>
-								<span class="nav-link-text">Co_Teacher</span>
-								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
-								<!--//submenu-arrow-->
-							</a>
-							<!--//nav-link-->
-							<div id="submenu-3" class="collapse submenu submenu-3" data-parent="#menu-accordion">
-								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="add_co-teacher.html">Add
-											Co_Teacher</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="mange_co-teacher.html">Manage
-											Co_Teacher</a></li>
-								</ul>
-							</div>
-						</li>
-						<!--//nav-item-->
-						<li class="nav-item has-submenu">
-							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-5"
-								aria-expanded="false" aria-controls="submenu-5">
-								<span class="nav-icon"><i class="fa fa-question"></i></span>
-								<span class="nav-link-text">Questionaires</span>
-								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
-								<!--//submenu-arrow-->
-							</a>
-							<!--//nav-link-->
-							<div id="submenu-5" class="collapse submenu submenu-5" data-parent="#menu-accordion">
-								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="category.html">Manage
-											Category</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="add_questionaire.html">Manage
-											Questionaire</a></li>
-								</ul>
-							</div>
 						</li>
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="evaluation.html">
-								<span class="nav-icon"><i class="fa fa-table"></i></span>
-								<span class="nav-link-text">Evaluation</span>
+							<a class="nav-link" href="teacher_evaluate_co_teacher.php">
+								<span class="nav-icon"><i class="fa fa-book"></i></span>
+								<span class="nav-link-text">Evaluate</span>
 							</a>
 							<!--//nav-link-->
 						</li>
-						<!--//nav-item-->
-						
 						<!--//nav-item-->
 					</ul>
 					<!--//app-menu-->
@@ -192,8 +128,7 @@
 
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
-				<h1 class="app-page-title text-success"><span class="nav-icon"><i class="fa fa-book"></i></span> Manage
-					Evaluation</h1>
+				<h1 class="app-page-title text-success"><span class="nav-icon"><i class="fa fa-star"></i></span> Rating</h1>
 				<hr class="mb-4">
 				<div class="row g-4 settings-section">
 					<div class="col-12 col-md-12">
@@ -204,7 +139,7 @@
 										<table id="myTable" class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
-													<th class="cell">Instructor Name</th>
+													<th class="cell">Question</th>
 													<th class="cell">Score</th>
 												</tr>
 												<tr>

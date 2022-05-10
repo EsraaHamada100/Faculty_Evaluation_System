@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,18 +26,47 @@
 					<div class="app-auth-branding mb-4"></div>
 					<h2 class="auth-heading text-center mb-5">Log in</h2>
 					<div class="auth-form-container text-left">
-						<form class="auth-form login-form" action="index.html">
+						<?php $checked = "index.html" ;?>
+						<form class="auth-form login-form" action= 'check_login_data.php' method="post">
 							<div class="email mb-3">
 								<label class="sr-only" for="signin-email">Username</label>
-								<input id="signin-email" name="signin-email" type="text"
+								<input id="signin-email" name="userName" type="text"
 									class="form-control signin-email" placeholder="Username">
 							</div>
 							<!--//form-group-->
+							
 							<div class="password mb-3">
 								<label class="sr-only" for="signin-password">Password</label>
-								<input id="signin-password" name="signin-password" type="password"
+								<input id="signin-password" name="password" type="password"
 									class="form-control signin-password" placeholder="Password">
 								<div class="extra mt-3 row justify-content-between">
+
+									<!-- //col-6
+
+									<div class="d-flex justify-content-between"><!--forgot-password text-left-->
+										<!-- <a href="teacher.html" >teacher</a>
+										<a href="co_teacher.html" >co-teacher</a>
+										<a href="student.html">Student</a> -->
+										<!-- <div>
+											<input id="option-one" name="radio" value="one" checked="checked" type="radio">
+											<label for="option-one">student</label>
+										</div>
+										<div>
+											<input id="option-two" name="radio" value="two" type="radio"> 
+											<label for="option-two">teacher</label>
+										</div>
+										<div>
+											<input id="option-three" name="radio" value="three" type="radio"> 
+											<label for="option-three">co-teacher</label>
+										</div>
+										<div>
+											<input id="option-four" name="radio" value="four" type="radio"> 
+											<label for="option-four">admin</label>
+										</div>
+
+									</div> 
+									<br><br> -->
+									<!-- third row : remember me -->
 									<div class="col-6">
 										<div class="form-check">
 											<input class="form-check-input" type="checkbox" value=""
@@ -46,22 +76,16 @@
 											</label>
 										</div>
 									</div>
-									<!--//col-6-->
-									<div class="col-6">
-										<div class="forgot-password text-right">
-											<a href="teacher.html" >teacher</a>
-											<a href="co_teacher.html" >co-teacher</a>
-											<a href="student.html">Student</a>
-										</div>
-									</div>
+
 									<!--//col-6-->
 								</div>
 								<!--//extra-->
 							</div>
 							<!--//form-group-->
 							<div class="text-center">
-								<button type="submit" class="btn app-btn-primary btn-block theme-btn mx-auto">Log
-									In</button>
+								<button type="submit" class="btn app-btn-primary btn-block theme-btn mx-auto" >
+									LogIn
+								</button>
 							</div>
 						</form>
 					</div>
