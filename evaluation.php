@@ -44,7 +44,7 @@
 									role="button" aria-expanded="false">
 									<img src="assets/images/admin.png" alt="" srcset=""></a>
 								<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-									<li><a class="dropdown-item" href="account.php">Account</a></li>
+									<!-- <li><a class="dropdown-item" href="account.php">Account</a></li> -->
 									<li>
 										<hr class="dropdown-divider">
 									</li>
