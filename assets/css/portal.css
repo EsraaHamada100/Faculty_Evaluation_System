@@ -12400,3 +12400,64 @@ input[type="radio"]:checked+label span {
     -moz-transition: background-color 0.24s linear;
     transition: background-color 0.24s linear;
 }
+.comment{
+    top:170%;
+    left:35%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 500px;
+
+}
+.comment h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+
+}
+.comment input{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+
+}
+.comment input :focus{
+    border: 1px solid #000000;
+    
+    
+}
+.comment textarea{
+    width: 100%;
+    height: 150px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    
+    border: 1px solid #1a1b1a;
+    
+    
+}
+
+.comment textarea :focus{
+    border: 1px solid #1b1c1b;
+    outline: 0;
+}
+
+.comment textarea :hover{
+    color: #000000;
+}
+.comment button{
+    border: 0;
+    padding: 10px 20px;
+    background: #066c14;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #ffffff;
+    width: 30%;
+   
+
+}
+.comment button:hover{
+    background-color: #2f933c;
+}
