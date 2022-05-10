@@ -1,5 +1,5 @@
 <?php 
-require_once "global.php";
+require "global.php";
 //  echo $connection ;
 function findUser($tableName, $pageLink){
     $sql = "SELECT * FROM $tableName;";
@@ -11,7 +11,10 @@ function findUser($tableName, $pageLink){
             if($row['username'] == $_POST["userName"] && $row['password'] == $_POST["password"]){
                 // navigate to this page
                 header("Location: $pageLink");
+                // start session
                 session_start();
+                $_SESSION['id'] = $row['ID'];
+                $_SESSION['userName'] = $row['username'] ;
                 $_SESSION['type'] = $tableName ;
                 exit();
             }
