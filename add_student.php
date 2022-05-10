@@ -202,7 +202,7 @@ require 'global.php';
 						<div class="app-card app-card-settings shadow-sm p-4">
 
 							<div class="app-card-body">
-								<form class="settings-form">
+								<form class="settings-form" method="post" action="check_add_student.php">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">User Name</label>
 										<input type="text" name="username" class="form-control" id="setting-input-2" value="" required>
@@ -216,7 +216,7 @@ require 'global.php';
 										<input type="password" name="password" class="form-control" id="setting-input-3" value="">
 									</div>
 
-									<button type="submit" action="check_add_student.php"  class="btn app-btn-primary">Save</button>
+									<button type="submit"   class="btn app-btn-primary">Save</button>
 								</form>
 							</div>
 							<!--//app-card-body-->
@@ -244,6 +244,11 @@ require 'global.php';
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>
 
+
+</body>
+
+</html>
+
 	<!--php-->
 	<!--?php
 // $string = 'INSERT INTO student(username, password, adminID) VALUES ("Eman",123,'.$_SESSION["id"].')';
@@ -268,6 +273,3 @@ require 'global.php';
 // 	// 	$result=mysqli_query($connection , $sqls);
 //  	header("location:check_add_student.php");}
 // ?>
-</body>
-
-</html>
