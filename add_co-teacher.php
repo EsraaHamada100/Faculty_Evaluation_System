@@ -118,7 +118,7 @@
 								<ul class="submenu-list list-unstyled">
 									<li class="submenu-item"><a class="submenu-link" href="add_teacher.php">Add
 											Teacher</a></li>
-									<li class="submenu-item"><a class="submenu-link" href="manage_class.php">Manage
+									<li class="submenu-item"><a class="submenu-link" href="manage_teacher.php">Manage
 											Teacher</a></li>
 								</ul>
 							</div>
