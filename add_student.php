@@ -202,15 +202,15 @@
 								<form class="settings-form">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">User Name</label>
-										<input type="text" class="form-control" id="setting-input-2" value="" required>
+										<input type="text" name="username" class="form-control" id="setting-input-2" value="" required>
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">ID Number</label>
-										<input type="number" class="form-control" id="setting-input-3" value="">
+										<input type="number" name = "ID" class="form-control" id="setting-input-3" value="">
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">Password</label>
-										<input type="password" class="form-control" id="setting-input-3" value="">
+										<input type="password" name="password" class="form-control" id="setting-input-3" value="">
 									</div>
 
 									<button type="submit"  class="btn app-btn-primary">Save</button>
@@ -242,8 +242,31 @@
 	<script src="assets/js/app.js"></script>
 
 	<!--php-->
+	<?php
+	$dbServerName = "localhost";
+    $dbUserName = "root";
+    $dbPassword = "";
+    $dbName = "automated_teacher_evaluation";
+    $connection = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
 
-
+	$ID = "";
+	$username ="";
+	$password =""; 
+	if(isset($_POST['ID'])){
+		$ID= $_POST[' ID'];
+	}
+	if(isset($_POST['username'])){
+		$username = $_POST['username'];
+	}
+	if(isset($_POST['Password'])){
+		$password = $_POST['Password'];
+	}
+	$sqls="";
+	if(isset($_POST['Save'])){
+		$sqls = "insert into student value ($ID ,'$username' ,'$password')";
+		mysqli_query($con , $sqls);
+		header("location:http://localhost/Faculty_Evaluation_System/add_student.php");}
+?>
 </body>
 
 </html>

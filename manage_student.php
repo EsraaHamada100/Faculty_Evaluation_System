@@ -215,8 +215,8 @@
 												<tr>
 													<td class="cell">123456</td>
 													<td class="cell">Jane Doe</td>
-													>
-													<td><a href="?=edit"><i class="fa fa-pen text-success"></i></a> <a
+													<td>
+													 <a
 															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
 													</td>
 												</tr>
@@ -224,7 +224,7 @@
 													<td class="cell">123426</td>
 													<td class="cell">John Doe</td>
 													
-													<td><a href="?=edit"><i class="fa fa-pen text-success"></i></a> <a
+													<td> <a
 															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
 													</td>
 												</tr>
@@ -232,7 +232,7 @@
 													<td class="cell">765452</td>
 													<td class="cell">Jose Dela Cruz</td>
 													
-													<td><a href="?=edit"><i class="fa fa-pen text-success"></i></a> <a
+													<td></a> <a
 															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
 													</td>
 												</tr>
