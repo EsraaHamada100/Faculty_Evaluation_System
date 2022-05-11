@@ -226,7 +226,7 @@ require 'global.php';
 													<a href='delete_student.php?ID="
 												.$row['ID']."'
 													>Delete</a>
-												   </td>";
+												   </td>"; 
 													echo "</tr>";
 												}
 

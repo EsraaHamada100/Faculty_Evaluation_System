@@ -221,11 +221,12 @@ require 'global.php';
 												echo "<tr>";
 												echo "<td>" .$row['ID']."</td>";
 												echo "<td>" .$row['username']."</td>";
-												echo '<td>
-												<a
-													   href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-											   </td>';
-												echo "</tr>";
+												echo "<td>
+												<a href='delete_teacher.php?ID="
+												.$row['ID']."'
+													>Delete</a>
+												   </td>";
+											 echo "</tr>";
 											}
 
 											?>				
