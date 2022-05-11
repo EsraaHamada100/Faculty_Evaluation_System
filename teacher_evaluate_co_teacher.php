@@ -14,6 +14,7 @@
 
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
+	<!-- <link id="theme-style" rel="stylesheet" href="evaluation.css"> -->
 
 </head>
 
@@ -135,7 +136,7 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<h1 class="app-page-title">Select Faculty</h1>
+								<h1 class="app-page-title">Select Teacher</h1>
 								<form class="settings-form">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Faculty</label>
@@ -146,7 +147,7 @@
 											</select>
 										</fieldset>
 									</div>
-									<button type="submit" class="btn app-btn-primary">Select</button>
+									<!-- <button type="submit" class="btn app-btn-primary">Select</button> -->
 								</form>
 							</div>
 							<!--//app-card-body-->
@@ -159,46 +160,40 @@
 							<div class="app-card-body">
 								<form class="settings-form">
 									<div class="mb-3">
-										<fieldset class="border border-info p-2 w-100">
-											<legend class="w-auto">Rating Legend</legend>
-											<p>5 = Strongly Agree, 4 = Agree, 3 = Uncertain, 2 = Disagree, 1 = Strongly
-												Disagree</p>
-										</fieldset><br>
-										<label for="setting-input-2" class="form-label bg-info">Category 1</label>
+										
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
 													<th class="cell">Questions</th>
-													<th class="cell">5</th>
-													<th class="cell">4</th>
-													<th class="cell">3</th>
-													<th class="cell">2</th>
+
 													<th class="cell">1</th>
+													<th class="cell">2</th>
+													<th class="cell">3</th>
+													<th class="cell">4</th>
+													<th class="cell">5</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
 													<td class="cell">Question 1</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
+													<span class="star-rating">
+
+														<td>
+															<input type="radio" name="rating" value="1"><i></i>
+														</td>
+														<td>
+															<input type="radio" name="rating" value="2"><i></i>
+														</td>
+														<td>
+															  <input type="radio" name="rating" value="3"><i></i>
+														</td>
+														<td>
+															<input type="radio" name="rating" value="4"><i></i>
+														</td>
+														<td>
+															<input type="radio" name="rating" value="5"><i></i>
+														</td>
+													</span>
 												</tr>
 												<tr>
 													<td class="cell">Question 2</td>
@@ -220,69 +215,6 @@
 													</td>
 													<td>
 														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div><br>
-									<div class="mb-3">
-										<label for="setting-input-3" class="form-label bg-info">Category 2</label>
-										<table class="table app-table-hover mb-0 text-left">
-											<thead>
-												<tr>
-													<th class="cell">Questions</th>
-													<th class="cell">5</th>
-													<th class="cell">4</th>
-													<th class="cell">3</th>
-													<th class="cell">2</th>
-													<th class="cell">1</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="cell">Question 1</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">Question 2</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
 															required>
 													</td>
 												</tr>
