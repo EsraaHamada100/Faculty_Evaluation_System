@@ -74,5 +74,10 @@ function getQuestionForTeacher(){
     return $result;
 
 }
+function co_teachersData() {
+    $sql = 'SELECT ID , username FROM co_teacher' ;
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
 
 ?>
