@@ -215,15 +215,26 @@ require 'global.php';
 												</tr>
 											</thead>
 											<tbody>
+											<a href="productPage.php?id='.$row["id"].'" >
 											<?php
 												while ($row = mysqli_fetch_array ($res)) {
 													echo "<tr>";
+<<<<<<< HEAD
 													echo "<td>" .$row['ID']."</td>";
+=======
+<<<<<<< HEAD
+													echo "<td>" .$row['ID']."</td>";
+													$_SESSION['delete_student'] = "Pizza" ;
+=======
+													echo "<td>" .$row[$_SESSION['id']]."</td>";
+>>>>>>> ff9572e6ded12a7b76adc9e523d07f203f45d1d7
+>>>>>>> ba3e92c39a490076ea8bc170378f3e77b5019712
 													echo "<td>" .$row['username']."</td>";
-													echo '<td>
-													<a
-														   href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-												   </td>';
+													echo "<td>
+													<a href='delete_student.php?ID="
+												.$row['ID']."'
+													>Delete</a>
+												   </td>";
 													echo "</tr>";
 												}
 
