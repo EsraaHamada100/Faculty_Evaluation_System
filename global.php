@@ -82,4 +82,11 @@ function co_teachersData() {
     return $result;
 }
 
+function teachersData() {
+    $sql = 'SELECT ID , username FROM teacher' ;
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
+
 ?>
