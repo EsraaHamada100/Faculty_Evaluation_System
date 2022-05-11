@@ -9,6 +9,8 @@ $dbName = "automated_teacher_evaluation";
 $connection = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
 $res = mysqli_query($connection ,"select * from student ");
 $res_1 = mysqli_query($connection ,"select * from teacher ");
+$res_2 = mysqli_query($connection ,"select * from co_teacher ");
+
 function getTeacherRatingData(){
     $stringforSql = 
     "SELECT  content, COUNT(*) as num_of_answers,round(SUM(student_answer_teacher.answer) /COUNT(*), 1)AS rating
@@ -81,5 +83,21 @@ function co_teachersData() {
     $result = mysqli_query($GLOBALS['connection'], $sql);
     return $result;
 }
+
+function teachersData() {
+    $sql = 'SELECT ID , username FROM teacher' ;
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
+function getQuestionForStudentAboutTeacher(){
+    $sql = 
+    "SELECT number, content
+    FROM question
+    WHERE category_num = 1";
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
 
 ?>
