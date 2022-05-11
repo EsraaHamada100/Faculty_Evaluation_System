@@ -219,12 +219,7 @@ require 'global.php';
 											<?php
 												while ($row = mysqli_fetch_array ($res)) {
 													echo "<tr>";
-<<<<<<< HEAD
 													echo "<td>" .$row['ID']."</td>";
-													$_SESSION['delete_student'] = "Pizza" ;
-=======
-													echo "<td>" .$row[$_SESSION['id']]."</td>";
->>>>>>> ff9572e6ded12a7b76adc9e523d07f203f45d1d7
 													echo "<td>" .$row['username']."</td>";
 													echo "<td>
 													<a href='delete_student.php?ID="
