@@ -22,5 +22,5 @@
     
  
       
-      header("location:add_student.php");
+      header("location:add_co-teacher.php");
  ?>
