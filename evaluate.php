@@ -11,7 +11,7 @@ require_once 'global.php';
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<link rel="stylesheet" href="evaluation.css">
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
@@ -180,136 +180,53 @@ require_once 'global.php';
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
 								<form class="settings-form">
-									<div class="mb-3">
-										<fieldset class="border border-info p-2 w-100">
-											<legend class="w-auto">Rating Legend</legend>
-											<p>5 = Strongly Agree, 4 = Agree, 3 = Uncertain, 2 = Disagree, 1 = Strongly
-												Disagree</p>
-										</fieldset><br>
-										<label for="setting-input-2" class="form-label bg-info">Category 1</label>
+								<div class="mb-3">
+										
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
 													<th class="cell">Questions</th>
-													<th class="cell">5</th>
-													<th class="cell">4</th>
-													<th class="cell">3</th>
-													<th class="cell">2</th>
-													<th class="cell">1</th>
+
+													<th class="cell">answer</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="cell">Question 1</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">Question 2</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-												</tr>
+
+												<?php 
+													$result = getQuestionForStudentAboutTeacher();
+													while($row = mysqli_fetch_array($result) ){
+
+														echo '<tr>
+														<td class="cell">'.$row['content'].'</td>
+														<span class="star-rating">
+	
+															<td>
+															<ul class="rate-area">
+															<input type="radio" id="5-star'.$row['number'].'" name="rating'.$row['number'].'" value="5" />
+															<label for="5-star'.$row['number'].'" title="Amazing">5 stars</label>
+
+															<input type="radio" id="4-star'.$row['number'].'" name="rating'.$row['number'].'" value="4" />
+															<label for="4-star'.$row['number'].'" title="Good">4 stars</label>
+
+															<input type="radio" id="3-star'.$row['number'].'" name="rating'.$row['number'].'" value="3" />
+															<label for="3-star'.$row['number'].'" title="Average">3 stars</label>
+
+															<input type="radio" id="2-star'.$row['number'].'" name="rating'.$row['number'].'" value="2" />
+															<label for="2-star'.$row['number'].'" title="Not Good">2 stars</label>
+
+															<input type="radio" id="1-star'.$row['number'].'" name="rating'.$row['number'].'" value="1" />
+															<label for="1-star'.$row['number'].'" title="Bad">1 star</label>
+
+														  </ul>
+															</td>
+														</span>
+													</tr>';
+													}
+												?>
 											</tbody>
 										</table>
-									</div><br>
-									<div class="mb-3">
-										<label for="setting-input-3" class="form-label bg-info">Category 2</label>
-										<table class="table app-table-hover mb-0 text-left">
-											<thead>
-												<tr>
-													<th class="cell">Questions</th>
-													<th class="cell">5</th>
-													<th class="cell">4</th>
-													<th class="cell">3</th>
-													<th class="cell">2</th>
-													<th class="cell">1</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="cell">Question 1</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">Question 2</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-												</tr>
-											</tbody>
-										</table>
+										
+					
 									</div>
 								</form>
 							</div>

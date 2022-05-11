@@ -225,7 +225,7 @@
 											</tbody>
 										</table>
 										<br><br>
-										<button class="submit-button" type="submit">Submit</button>
+										<button class="submit-button" type="submit" >Submit</button>
 									</div>
 								</div>
 								

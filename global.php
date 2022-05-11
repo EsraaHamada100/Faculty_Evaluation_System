@@ -88,5 +88,14 @@ function teachersData() {
     return $result;
 }
 
+function getQuestionForStudentAboutTeacher(){
+    $sql = 
+    "SELECT number, content
+    FROM question
+    WHERE category_num = 1";
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
 
 ?>
