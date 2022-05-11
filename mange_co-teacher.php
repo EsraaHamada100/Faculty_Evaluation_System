@@ -162,8 +162,6 @@ require 'global.php';
 							<!--//nav-link-->
 							<div id="submenu-5" class="collapse submenu submenu-5" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="category.php">Manage
-											Category</a></li>
 									<li class="submenu-item"><a class="submenu-link" href="add_questionaire.php">Manage
 											Questionnaire</a></li>
 								</ul>
@@ -215,7 +213,7 @@ require 'global.php';
 											</thead>
 											<?php
 											
-											while ($row = mysqli_fetch_array ($res_1)) {
+											while ($row = mysqli_fetch_array ($res_2)) {
 												echo "<tr>";
 												echo "<td>" .$row['ID']."</td>";
 												echo "<td>" .$row['username']."</td>";

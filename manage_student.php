@@ -162,8 +162,8 @@ require 'global.php';
 							<!--//nav-link-->
 							<div id="submenu-5" class="collapse submenu submenu-5" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-									<li class="submenu-item"><a class="submenu-link" href="category.php">Manage
-											Category</a></li>
+									<!-- <li class="submenu-item"><a class="submenu-link" href="category.php">Manage
+											Category</a></li> -->
 									<li class="submenu-item"><a class="submenu-link" href="add_questionaire.php">Manage
 											Questionnaire</a></li>
 								</ul>
@@ -216,10 +216,9 @@ require 'global.php';
 											</thead>
 											<tbody>
 											<?php
-											
 												while ($row = mysqli_fetch_array ($res)) {
 													echo "<tr>";
-													echo "<td>" .$row['ID']."</td>";
+													echo "<td>" .$row[$_SESSION['id']]."</td>";
 													echo "<td>" .$row['username']."</td>";
 													echo '<td>
 													<a
@@ -228,7 +227,32 @@ require 'global.php';
 													echo "</tr>";
 												}
 
-												?>											
+												?>
+												 
+												<!-- <tr>
+													<td class="cell">123456</td>
+													<td class="cell">Jane Doe</td>
+													<td>
+													 <a
+															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
+													</td>
+												</tr> -->
+												<!-- <tr>
+													<td class="cell">123426</td>
+													<td class="cell">John Doe</td>
+													
+													<td> <a
+															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
+													</td>
+												</tr>
+												<tr>
+													<td class="cell">765452</td>
+													<td class="cell">Jose Dela Cruz</td>
+													
+													<td></a> <a
+															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
+													</td>
+												</tr> -->
 											</tbody>
 										</table>
 									</div>
