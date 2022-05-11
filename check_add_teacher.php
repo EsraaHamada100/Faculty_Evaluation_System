@@ -19,5 +19,5 @@
          mysqli_query($GLOBALS['connection'], $sql);
           
      }
-     header("location:add_student.php");
+     header("location:add_teacher.php");
  ?>
