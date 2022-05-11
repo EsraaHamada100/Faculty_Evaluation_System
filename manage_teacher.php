@@ -207,31 +207,31 @@
 												<tr>
 													<th class="cell">Teacher Code</th>
 													<th class="cell">Instructor Name</th>
-													<th class="cell">Subject</th>
+													<!-- <th class="cell">Subject</th> -->
 													<th class="cell">Action</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td class="cell">ABC123</td>
+													<!-- <td class="cell">ABC123</td>
 													<td class="cell">Jane Doe</td>
-													<td class="cell">MAthematics</td>
+													<td class="cell">MAthematics</td> -->
 													<td> 
 														<a href="?=delete"><i class="fa fa-trash text-danger"></i></a>
 													</td>
 												</tr>
 												<tr>
-													<td class="cell">ABC123</td>
+													<!-- <td class="cell">ABC123</td>
 													<td class="cell">Jane Doe</td>
-													<td class="cell">MAthematics</td>
+													<td class="cell">MAthematics</td> -->
 													<td> <a
 															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
 													</td>
 												</tr>
 												<tr>
-													<td class="cell">ABC123</td>
+													<!-- <td class="cell">ABC123</td>
 													<td class="cell">Jane Doe</td>
-													<td class="cell">MAthematics</td>
+													<td class="cell">MAthematics</td> -->
 													<td> <a
 															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
 													</td>

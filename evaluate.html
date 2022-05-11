@@ -83,15 +83,36 @@
 							<!--//nav-link-->
 						</li>
 						<!--//nav-item-->
-						<li class="nav-item">
+						
+						<!--<li class="nav-item">-->
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="evaluate.html">
+							<!--<a class="nav-link" href="evaluate.html">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 							</a>
+						-->
 							<!--//nav-link-->
-						</li>
+						<!--</li>--->
 						<!--//nav-item-->
+						<li class="nav-item has-submenu">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2"
+								aria-expanded="false" aria-controls="submenu-2">
+								<span class="nav-icon"><i class="fa fa-users"></i></span>
+								<span class="nav-link-text">Evaluate Teacher</span>
+								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
+								<!--//submenu-arrow-->
+							</a>
+							<!--//nav-link-->
+							<div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
+								<ul class="submenu-list list-unstyled">
+								<!----	<li class="submenu-item"><a class="submenu-link" href="evaluate.html">Teacher
+											</a></li>-->
+									<li class="submenu-item"><a class="submenu-link" href="evaluate.html">Co-Teacher
+											</a></li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 					<!--//app-menu-->
 				</nav>
@@ -119,6 +140,7 @@
 								<h1 class="app-page-title">Select Faculty</h1>
 								<form class="settings-form">
 									<div class="mb-3">
+										<!---
 										<label for="setting-input-2" class="form-label">Faculty Member</label>
 										<fieldset class="form-group">
 											<select class="form-select" id="basicSelect">
@@ -127,6 +149,7 @@
 										
 											</select>
 										</fieldset>
+									-->
 										<label for="setting-input-2" class="form-label">Name</label>
 										<fieldset class="form-group">
 											<select class="form-select" id="basicSelect">

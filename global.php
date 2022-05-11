@@ -66,4 +66,14 @@ function getTeacherCommentsAndRating(){
     return $result;
 }
 
+function getQuestionForTeacher(){
+    $sql = 
+    "SELECT number, content
+    FROM question
+    WHERE category_num = 6";
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+
+}
+
 ?>

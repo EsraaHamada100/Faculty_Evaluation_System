@@ -209,7 +209,7 @@ require 'global.php';
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">ID Number</label>
-										<input type="number" name = "ID" class="form-control" id="setting-input-3" value="">
+										<input type="number" name = "ID" class="form-control" id="setting-input-3" value="John"disabled>
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3"  class="form-label">Password</label>

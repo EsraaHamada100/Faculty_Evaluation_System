@@ -1,3 +1,6 @@
+<?php 
+	require_once 'global.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +17,7 @@
 
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
-	<!-- <link id="theme-style" rel="stylesheet" href="evaluation.css"> -->
+	<link id="theme-style" rel="stylesheet" href="evaluation.css">
 
 </head>
 
@@ -166,60 +169,45 @@
 												<tr>
 													<th class="cell">Questions</th>
 
-													<th class="cell">1</th>
-													<th class="cell">2</th>
-													<th class="cell">3</th>
-													<th class="cell">4</th>
-													<th class="cell">5</th>
+													<th class="cell">answer</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="cell">Question 1</td>
-													<span class="star-rating">
 
-														<td>
-															<input type="radio" name="rating" value="1"><i></i>
-														</td>
-														<td>
-															<input type="radio" name="rating" value="2"><i></i>
-														</td>
-														<td>
-															  <input type="radio" name="rating" value="3"><i></i>
-														</td>
-														<td>
-															<input type="radio" name="rating" value="4"><i></i>
-														</td>
-														<td>
-															<input type="radio" name="rating" value="5"><i></i>
-														</td>
-													</span>
-												</tr>
-												<tr>
-													<td class="cell">Question 2</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-												</tr>
+												<?php 
+													$result = getQuestionForTeacher();
+													while($row = mysqli_fetch_array($result) ){
+														echo '<tr>
+														<td class="cell">'.$row['content'].'</td>
+														<span class="star-rating">
+	
+															<td>
+															<ul class="rate-area">
+															<input type="radio" id="5-star'.$row['number'].'" name="rating'.$row['number'].'" value="5" />
+															<label for="5-star'.$row['number'].'" title="Amazing">5 stars</label>
+
+															<input type="radio" id="4-star'.$row['number'].'" name="rating'.$row['number'].'" value="4" />
+															<label for="4-star'.$row['number'].'" title="Good">4 stars</label>
+
+															<input type="radio" id="3-star'.$row['number'].'" name="rating'.$row['number'].'" value="3" />
+															<label for="3-star'.$row['number'].'" title="Average">3 stars</label>
+
+															<input type="radio" id="2-star'.$row['number'].'" name="rating'.$row['number'].'" value="2" />
+															<label for="2-star'.$row['number'].'" title="Not Good">2 stars</label>
+
+															<input type="radio" id="1-star'.$row['number'].'" name="rating'.$row['number'].'" value="1" />
+															<label for="1-star'.$row['number'].'" title="Bad">1 star</label>
+
+														  </ul>
+															</td>
+														</span>
+													</tr>';
+													}
+												?>
 											</tbody>
 										</table>
+										<br><br>
+										<button type="submit">Submit</button>
 									</div>
 								</form>
 							</div>
