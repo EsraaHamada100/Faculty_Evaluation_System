@@ -7,6 +7,7 @@ $dbUserName = "root";
 $dbPassword = "";
 $dbName = "automated_teacher_evaluation";
 $connection = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
+$res = mysqli_query($connection ,"select * from student ");
 function getTeacherRatingData(){
     $stringforSql = 
     "SELECT  content, COUNT(*) as num_of_answers,round(SUM(student_answer_teacher.answer) /COUNT(*), 1)AS rating

@@ -1,3 +1,6 @@
+<?php
+require 'global.php';
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -200,7 +203,7 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<form class="settings-form">
+								<form class="settings-form" method="post" action = "select_student.php">
 									<div class="mb-3">
 										<table id="myTable" class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -212,30 +215,20 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td class="cell">123456</td>
-													<td class="cell">Jane Doe</td>
-													<td>
-													 <a
-															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">123426</td>
-													<td class="cell">John Doe</td>
-													
-													<td> <a
-															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">765452</td>
-													<td class="cell">Jose Dela Cruz</td>
-													
-													<td></a> <a
-															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
-												</tr>
+											<?php
+											
+												while ($row = mysqli_fetch_array ($res)) {
+													echo "<tr>";
+													echo "<td>" .$row['ID']."</td>";
+													echo "<td>" .$row['username']."</td>";
+													echo '<td>
+													<a
+														   href="?=delete"><i class="fa fa-trash text-danger"></i></a>
+												   </td>';
+													echo "</tr>";
+												}
+
+												?>											
 											</tbody>
 										</table>
 									</div>

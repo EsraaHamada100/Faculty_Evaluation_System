@@ -209,14 +209,14 @@ require 'global.php';
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">ID Number</label>
-										<input type="number" name = "ID" class="form-control" id="setting-input-3" value="">
+										<input type="String" name = "ID" class="form-control" id="setting-input-3" value="auto.." disabled>
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">Password</label>
 										<input type="password"  name="password" class="form-control" id="setting-input-3" value="">
 									</div>
 
-									<button type="submit" class="btn app-btn-primary">Save</button>
+									<button type="submit"   class="btn app-btn-primary" onclick="alert('added Successed')">Save</button>
 								</form>
 							</div>
 							<!--//app-card-body-->
