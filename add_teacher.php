@@ -1,3 +1,6 @@
+<?php
+require 'global.php';
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -199,18 +202,18 @@
 						<div class="app-card app-card-settings shadow-sm p-4">
 
 							<div class="app-card-body">
-								<form class="settings-form">
+							<form class="settings-form" method="post" action="check_add_teacher.php">
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">User Name</label>
-										<input type="text" class="form-control" id="setting-input-2" value="" required>
+										<label for="setting-input-2"  class="form-label">User Name</label>
+										<input type="text" name="username" class="form-control" id="setting-input-2" value="" required>
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">ID Number</label>
-										<input type="number" class="form-control" id="setting-input-3" value="">
+										<input type="number" name = "ID" class="form-control" id="setting-input-3" value="">
 									</div>
 									<div class="mb-3">
-										<label for="setting-input-3" class="form-label">Password</label>
-										<input type="password" class="form-control" id="setting-input-3" value="">
+										<label for="setting-input-3"  class="form-label">Password</label>
+										<input type="password" name="password" class="form-control" id="setting-input-3" value="">
 									</div>
 
 									<button type="submit" class="btn app-btn-primary">Save</button>
