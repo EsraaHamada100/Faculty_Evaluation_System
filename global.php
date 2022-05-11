@@ -78,5 +78,26 @@ function getQuestionForTeacher(){
     return $result;
 
 }
+function co_teachersData() {
+    $sql = 'SELECT ID , username FROM co_teacher' ;
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
+function teachersData() {
+    $sql = 'SELECT ID , username FROM teacher' ;
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
+function getQuestionForStudentAboutTeacher(){
+    $sql = 
+    "SELECT number, content
+    FROM question
+    WHERE category_num = 1";
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
 
 ?>

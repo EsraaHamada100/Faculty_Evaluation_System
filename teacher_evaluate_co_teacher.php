@@ -11,9 +11,21 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<!-- select option -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("select.form-select").change(function(){
+				var selected_option = $('#basicSelect option:selected').text();
+				alert("You have selected teacher :  " + selected_option);
+			});
+		});
+	</script>
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+
+	
+
 
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
@@ -145,10 +157,16 @@
 										<label for="setting-input-2" class="form-label">Faculty</label>
 										<fieldset class="form-group">
 											<select class="form-select" id="basicSelect">
-												<option>John Doe</option>
-												<option>Juan dela Cruz</option>
+												<?php 
+													$result = co_teachersData();
+													while($row = mysqli_fetch_array($result)){
+														echo '<option value= "'.$row['id'].'">'.$row['username'].'</option>';
+													}
+												
+												?>
 											</select>
 										</fieldset>
+
 									</div>
 									<!-- <button type="submit" class="btn app-btn-primary">Select</button> -->
 								</form>
@@ -207,10 +225,14 @@
 											</tbody>
 										</table>
 										<br><br>
-										<button type="submit">Submit</button>
+										<button class="submit-button" type="submit" >Submit</button>
 									</div>
-								</form>
-							</div>
+								</div>
+								
+								
+							</form>
+							
+						</div>
 							<!--//app-card-body-->
 
 						</div>
@@ -237,6 +259,7 @@
 
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>
+
 
 </body>
 
