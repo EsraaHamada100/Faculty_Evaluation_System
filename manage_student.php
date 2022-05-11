@@ -215,16 +215,19 @@ require 'global.php';
 												</tr>
 											</thead>
 											<tbody>
+											<a href="productPage.php?id='.$row["id"].'" >
 											<?php
 											
 												while ($row = mysqli_fetch_array ($res)) {
 													echo "<tr>";
 													echo "<td>" .$row['ID']."</td>";
+													$_SESSION['delete_student'] = "Pizza" ;
 													echo "<td>" .$row['username']."</td>";
-													echo '<td>
-													<a
-														   href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-												   </td>';
+													echo "<td>
+													<a href='delete_student.php?ID="
+												.$row['ID']."'
+													>Delete</a>
+												   </td>";
 													echo "</tr>";
 												}
 
