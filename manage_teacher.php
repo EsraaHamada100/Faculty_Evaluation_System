@@ -1,3 +1,6 @@
+<?php
+require 'global.php';
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -212,29 +215,36 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<!-- <td class="cell">ABC123</td>
-													<td class="cell">Jane Doe</td>
-													<td class="cell">MAthematics</td> -->
-													<td> 
-														<a href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
+											<?php
+											
+											while ($row = mysqli_fetch_array ($res_1)) {
+												echo "<tr>";
+												echo "<td>" .$row['ID']."</td>";
+												echo "<td>" .$row['username']."</td>";
+												echo '<td>
+												<a
+													   href="?=delete"><i class="fa fa-trash text-danger"></i></a>
+											   </td>';
+												echo "</tr>";
+											}
+
+											?>				
 												</tr>
 												<tr>
 													<!-- <td class="cell">ABC123</td>
 													<td class="cell">Jane Doe</td>
 													<td class="cell">MAthematics</td> -->
-													<td> <a
+													<!-- <td> <a
 															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
+													</td> -->
 												</tr>
 												<tr>
 													<!-- <td class="cell">ABC123</td>
 													<td class="cell">Jane Doe</td>
 													<td class="cell">MAthematics</td> -->
-													<td> <a
+													<!-- <td> <a
 															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
+													</td> -->
 												</tr>
 											</tbody>
 										</table>

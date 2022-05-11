@@ -1,3 +1,6 @@
+<?php
+require 'global.php';
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -207,35 +210,23 @@
 												<tr>
 													<th class="cell">Co-Teacher Code</th>
 													<th class="cell">Instructor Name</th>
-													<th class="cell">Subject</th>
 													<th class="cell">Action</th>
 												</tr>
 											</thead>
-											<tbody>
-												<tr>
-													<td class="cell">ABC123</td>
-													<td class="cell">Jane Doe</td>
-													<td class="cell">MAthematics</td>
-													<td> 
-														<a href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">ABC123</td>
-													<td class="cell">Jane Doe</td>
-													<td class="cell">MAthematics</td>
-													<td> <a
-															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">ABC123</td>
-													<td class="cell">Jane Doe</td>
-													<td class="cell">MAthematics</td>
-													<td> <a
-															href="?=delete"><i class="fa fa-trash text-danger"></i></a>
-													</td>
-												</tr>
+											<?php
+											
+											while ($row = mysqli_fetch_array ($res_1)) {
+												echo "<tr>";
+												echo "<td>" .$row['ID']."</td>";
+												echo "<td>" .$row['username']."</td>";
+												echo '<td>
+												<a
+													   href="?=delete"><i class="fa fa-trash text-danger"></i></a>
+											   </td>';
+												echo "</tr>";
+											}
+
+											?>			
 											</tbody>
 										</table>
 									</div>
