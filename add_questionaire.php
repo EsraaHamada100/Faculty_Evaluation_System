@@ -1,3 +1,6 @@
+<?php
+require_once 'global.php';
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +12,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="evaluation.css">
 
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
@@ -199,7 +203,7 @@
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
 								<h1 class="app-page-title">Questionnaire Form</h1>
-								<form class="settings-form">
+								<form class="settings-form" method="post" action="save_question.php">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Category</label>
 										<fieldset class="form-group">
@@ -235,60 +239,32 @@
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
+												    <th class="cell">No.</th>
 													<th class="cell">Questions</th>
-													<th class="cell">5</th>
-													<th class="cell">4</th>
-													<th class="cell">3</th>
-													<th class="cell">2</th>
-													<th class="cell">1</th>
+													
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td class="cell">Question 1</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer" id="answer" value="yes"
-															required>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">Question 2</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer1" id="answer1" value="yes"
-															required>
-													</td>
+										
+													<?php 
+													
+													while ($row = mysqli_fetch_array ($res_3)) {
+														echo "<tr>";
+
+													    echo "<td>" .$row['number']."</td>";
+														echo "<td>" .$row['content']."</td>";
+														echo "<td>
+													<a href='delete_question.php?number="
+												.$row['number']."'
+													>Delete</a>
+												   </td>"; 
+														// echo "<td>" .$row['username']."</td>";
+														echo "<td>
+													   </td>"; 
+														echo "</tr>";
+													}
+												?>
 												</tr>
 											</tbody>
 										</table>
@@ -298,61 +274,30 @@
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
-													<th class="cell">Questions</th>
-													<th class="cell">5</th>
-													<th class="cell">4</th>
-													<th class="cell">3</th>
-													<th class="cell">2</th>
-													<th class="cell">1</th>
+												<th class="cell">No.</th>
+												<th class="cell">Questions</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td class="cell">Question 1</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer2" id="answer2" value="yes"
-															required>
-													</td>
-												</tr>
-												<tr>
-													<td class="cell">Question 2</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-													<td>
-														<input type="radio" name="answer4" id="answer4" value="yes"
-															required>
-													</td>
-												</tr>
+											        
+													<?php 
+													
+												 	while ($row = mysqli_fetch_array ($res_4)) {
+												 		echo "<tr>";
+														 echo "<td>" .$row['number']."</td>";
+														echo "<td>" .$row['content']."</td>";
+														echo "<td>
+													<a href='delete_question.php?number="
+												.$row['number']."'
+													>Delete</a>
+												   </td>"; 
+														echo "<td>
+													   </td>"; 
+														echo "</tr>";
+													}
+												?>
+												
 											</tbody>
 										</table>
 									</div>

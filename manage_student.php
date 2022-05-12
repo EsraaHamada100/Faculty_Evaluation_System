@@ -1,5 +1,5 @@
 <?php
-require 'global.php';
+require_once 'global.php';
 ?>
 <!DOCTYPE html>
 <!DOCTYPE html>

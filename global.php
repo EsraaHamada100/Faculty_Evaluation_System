@@ -10,6 +10,8 @@ $connection = mysqli_connect($dbServerName, $dbUserName, $dbPassword, $dbName);
 $res = mysqli_query($connection ,"select * from student ");
 $res_1 = mysqli_query($connection ,"select * from teacher ");
 $res_2 = mysqli_query($connection ,"select * from co_teacher ");
+$res_3 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =1 ");
+$res_4 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =2");
 
 function getTeacherRatingData(){
     $stringforSql = 
