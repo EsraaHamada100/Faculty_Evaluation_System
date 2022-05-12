@@ -220,11 +220,10 @@ require_once 'global.php';
 												while ($row = mysqli_fetch_array ($res)) {
 													echo "<tr>";
 													echo "<td>" .$row['ID']."</td>";
-													
 													echo "<td>" .$row['username']."</td>";
 													echo "<td>
 													<a href='delete_student.php?ID="
-												.$row['ID']."'
+												 .$row['ID']."'
 													>Delete</a>
 												   </td>"; 
 													echo "</tr>";

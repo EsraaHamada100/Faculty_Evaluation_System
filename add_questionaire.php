@@ -16,6 +16,22 @@ require_once 'global.php';
 
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("select.form-select").change(function(){
+				var selected_option = $('#basicSelect option:selected').text();
+				var selected_option_value = $('#basicSelect option:selected').val();
+				<?php $abc = "<script>document.write(selected_option_value)</script>";
+				$_SESSION["category_num"] = $abc ;
+				
+				?>
+				alert("You have selected teacher :  " + selected_option_value);
+			});
+
+			
+		});
+	</script>
 
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
@@ -208,18 +224,18 @@ require_once 'global.php';
 										<label for="setting-input-2" class="form-label">Category</label>
 										<fieldset class="form-group">
 											<select class="form-select" id="basicSelect">
-												<option>question about teacher to be answered by student</option>
-												<option>question about co-teacher to be answered by student</option>
-												<option>question about teacher to be answered by admin</option>
-												<option>question about co-teacher to be answered by admin</option>
-												<option>question about teacher to be answered by co-teacher</option>
-												<option>question about co-teacher to be answered by teacher</option>
+												<option value = "1">question about teacher to be answered by student</option>
+												<option value = "2">question about co-teacher to be answered by student</option>
+												<option value = "3">question about teacher to be answered by admin</option>
+												<option value = "4">question about co-teacher to be answered by admin</option>
+												<option value = "5">question about teacher to be answered by co-teacher</option>
+												<option value = "6">question about co-teacher to be answered by teacher</option>
 											</select>
 										</fieldset>
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">Add Question</label>
-										<input type="test" class="form-control" id="setting-input-3" value="" required>
+										<input type="test" name="content" class="form-control" id="setting-input-3" value="" required>
 									</div>
 									<button type="submit" class="btn app-btn-primary">Save</button>
 								</form>
