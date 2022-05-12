@@ -209,18 +209,11 @@ require_once 'admin.php';
 										<table id="myTable" class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
-													<th class="cell">Instructor Name</th>
+													<th class="cell">Teacher Name</th>
 													<th class="cell">Number Of Answers</th>
 													<th class="cell">Total Rating</th>
 												</tr>
-												<!-- <tr>
-													<th class="cell">nada alaa</th>
-													<th class="cell">25</th>
-												</tr>
-												<tr>
-													<th class="cell">nada alaa</th>
-													<th class="cell">25</th>
-												</tr> -->
+
 											</thead>
 											<tbody>
 											<?php
@@ -229,8 +222,8 @@ require_once 'admin.php';
 												$sql = 'SELECT username 
 												FROM teacher 
 												WHERE ID = '.$row["teacherID"];
-												$result = mysqli_query($GLOBALS['connection'], $sql);
-												$row1 = mysqli_fetch_array($result);
+												$result2 = mysqli_query($GLOBALS['connection'], $sql);
+												$row1 = mysqli_fetch_array($result2);
 												$teacherName=$row1["username"];
 												echo '<tr>
 												<th class="cell">'.$teacherName.'</th>
@@ -246,15 +239,71 @@ require_once 'admin.php';
 										</table>
 									</div>
 								</form>
+
 							</div>
 							<!--//app-card-body-->
 
 						</div>
+
+					</div>
 						<!--//app-card-->
 					</div>
 				</div>
-				<!--//row-->
+				<br><br><br>
+				<div class="row g-4 settings-section">
+					<div class="col-12 col-md-12">
+						<div class="app-card app-card-settings shadow-sm p-4">
+							<div class="app-card-body">
 
+							<form class="settings-form">
+									<div class="mb-3">
+											<table id="myTable" class="table app-table-hover mb-0 text-left">
+												<thead>
+													<tr>
+														<th class="cell">Co-teacher Name</th>
+														<th class="cell">Number Of Answers</th>
+														<th class="cell">Total Rating</th>
+													</tr>
+												</thead>
+
+												<tbody>
+													<?php
+													$result=Admin::getCo_teachersRating();
+													while($row = mysqli_fetch_array($result)){
+														$sql = 'SELECT username 
+														FROM co_teacher 
+														WHERE ID = '.$row["co_teacherID"];
+														$result2 = mysqli_query($GLOBALS['connection'], $sql);
+														$row2 = mysqli_fetch_array($result2);
+														$co_teacherName=$row1["username"];
+														echo '<tr>
+														<th class="cell">'.$co_teacherName.'</th>
+														<th class="cell">'.$row["num_of_answers"].'</th>
+														<th class="cell">'.$row["total_rating"].'</th>
+														</tr>';
+													}
+													
+													?>
+											
+												</tbody>
+											</table>
+										</div>
+							</form>
+
+							</div>
+							<!--//app-card-body-->
+
+						</div>
+
+					</div>
+						<!--//app-card-->
+					</div>
+				</div>
+
+				<!-- my form -->
+
+				<!--//row-->
+			
 				<hr class="my-4">
 			</div>
 			<!--//container-fluid-->
