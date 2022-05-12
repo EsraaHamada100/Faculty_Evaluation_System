@@ -12400,6 +12400,7 @@ input[type="radio"]:checked+label span {
     -moz-transition: background-color 0.24s linear;
     transition: background-color 0.24s linear;
 }
+ /* Hagar's Code */
 .comment{
     bottom:-45%;
     right:20%;
@@ -12413,4 +12414,54 @@ input[type="radio"]:checked+label span {
     padding: 15px 20px;
     margin-bottom: 10px;
     border-radius: 5px;
+}
+
+.popup{
+    width: 400px;
+    background: #fff;
+    border-radius: 6px ;
+    position: absolute;
+    top:0%;
+    left:50%;
+    transform: translate(-5%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s;
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+    
+}
+.popup button{
+    width: 100%;
+    margin-top:50px;
+    padding: 10px 0;
+    border: 0;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.open-popup{
+    visibility: visible;
+    top:50%;
+    transform: translate(-5%,-50%) scale(1);
+
+
+}
+.btnyy{
+    color: #fff;
+    background-color: #1bd07d;
+    border-color: #18ba70
 }

@@ -249,10 +249,17 @@ require_once 'global.php';
               <input type="email" name="email" placeholder="Email Address..">
 			-->
               <textarea name="comment" id="" cols="30" rows="10" placeholder="Type Your Comment..."></textarea>
-              <button type="submit">Submit</button>
-              
+              <button type="submit" class="btnyy" onclick="openPopup()">Submit</button>
             </form>
+			
         </div>
+		<div class="popup" id="popup">
+				<img src="assets/images/404-tick.png">
+				<h2>Thank You!</h2>
+				<p>Your details has been successfully submitted. Thankes!</p>
+				<button type="button" onclick="closePopup()">Ok</button>
+
+		</div>
 		
 
 	</div>
@@ -269,6 +276,17 @@ require_once 'global.php';
 
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>
+	<!----- popup--->
+	<script>
+		let popup=document.getElementById("popup");
+		function openPopup() {
+			popup.classList.add("open-popup");
+		}
+		function closePopup() {
+			popup.classList.remove("open-popup");
+		}
+
+	</script>
 
 </body>
 
