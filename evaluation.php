@@ -1,3 +1,8 @@
+<?php
+require_once 'global.php';
+require_once 'admin.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,19 +210,36 @@
 											<thead>
 												<tr>
 													<th class="cell">Instructor Name</th>
-													<th class="cell">Score</th>
+													<th class="cell">Number Of Answers</th>
+													<th class="cell">Total Rating</th>
 												</tr>
-												<tr>
+												<!-- <tr>
 													<th class="cell">nada alaa</th>
 													<th class="cell">25</th>
 												</tr>
 												<tr>
 													<th class="cell">nada alaa</th>
 													<th class="cell">25</th>
-												</tr>
+												</tr> -->
 											</thead>
 											<tbody>
+											<?php
+											$result=Admin::getTeachersRating();
+											while($row = mysqli_fetch_array($result)){
+												$sql = 'SELECT username 
+												FROM teacher 
+												WHERE ID = '.$row["teacherID"];
+												$result = mysqli_query($GLOBALS['connection'], $sql);
+												$row1 = mysqli_fetch_array($result);
+												$teacherName=$row1["username"];
+												echo '<tr>
+												<th class="cell">'.$teacherName.'</th>
+												<th class="cell">'.$row["num_of_answers"].'</th>
+												<th class="cell">'.$row["total_rating"].'</th>
+											    </tr>';
+											}
 											
+											?>
 											
 												
 											</tbody>

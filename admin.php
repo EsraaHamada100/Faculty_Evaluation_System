@@ -1,5 +1,7 @@
 <?php
 require_once 'global.php';
+require_once 'user.php';
+
 class Admin extends User{
 
     function addStudent($studentName , $studentPassword){
