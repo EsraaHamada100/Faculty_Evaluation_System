@@ -208,13 +208,17 @@ require_once 'global.php';
 										<label for="setting-input-2" class="form-label">Category</label>
 										<fieldset class="form-group">
 											<select class="form-select" id="basicSelect">
-												<option> Teacher</option>
-												<option> Co-Teacher</option>
+												<option>question about teacher to be answered by student</option>
+												<option>question about co-teacher to be answered by student</option>
+												<option>question about teacher to be answered by admin</option>
+												<option>question about co-teacher to be answered by admin</option>
+												<option>question about teacher to be answered by co-teacher</option>
+												<option>question about co-teacher to be answered by teacher</option>
 											</select>
 										</fieldset>
 									</div>
 									<div class="mb-3">
-										<label for="setting-input-3" class="form-label">Question Name</label>
+										<label for="setting-input-3" class="form-label">Add Question</label>
 										<input type="test" class="form-control" id="setting-input-3" value="" required>
 									</div>
 									<button type="submit" class="btn app-btn-primary">Save</button>
@@ -235,7 +239,7 @@ require_once 'global.php';
 											<p>5 = Strongly Agree, 4 = Agree, 3 = Uncertain, 2 = Disagree, 1 = Strongly
 												Disagree</p>
 										</fieldset><br>
-										<label for="setting-input-2" class="form-label bg-info"> Teacher</label>
+										<label for="setting-input-2" class="form-label bg-info"> question about teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -270,7 +274,7 @@ require_once 'global.php';
 										</table>
 									</div><br>
 									<div class="mb-3">
-										<label for="setting-input-3" class="form-label bg-info">Co-Teacher</label>
+										<label for="setting-input-3" class="form-label bg-info">question about co-teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -303,6 +307,146 @@ require_once 'global.php';
 									</div>
 								</form>
 							</div>
+
+							        <br>
+									<div class="mb-4">
+										<label for="setting-input-4" class="form-label bg-info">question about teacher to be answered by admin</label>
+										<table class="table app-table-hover mb-0 text-left">
+											<thead>
+												<tr>
+												<th class="cell">No.</th>
+												<th class="cell">Questions</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+											        
+													<?php 
+													
+												 	while ($row = mysqli_fetch_array ($res_5)) {
+												 		echo "<tr>";
+														 echo "<td>" .$row['number']."</td>";
+														echo "<td>" .$row['content']."</td>";
+														echo "<td>
+													<a href='delete_question.php?number="
+												.$row['number']."'
+													>Delete</a>
+												   </td>"; 
+														echo "<td>
+													   </td>"; 
+														echo "</tr>";
+													}
+												?>
+												
+											</tbody>
+										</table>
+									</div>
+
+									<br>
+									<div class="mb-5">
+										<label for="setting-input-5" class="form-label bg-info">question about co-teacher to be answered by admin</label>
+										<table class="table app-table-hover mb-0 text-left">
+											<thead>
+												<tr>
+												<th class="cell">No.</th>
+												<th class="cell">Questions</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+											        
+													<?php 
+													
+												 	while ($row = mysqli_fetch_array ($res_6)) {
+												 		echo "<tr>";
+														 echo "<td>" .$row['number']."</td>";
+														echo "<td>" .$row['content']."</td>";
+														echo "<td>
+													<a href='delete_question.php?number="
+												.$row['number']."'
+													>Delete</a>
+												   </td>"; 
+														echo "<td>
+													   </td>"; 
+														echo "</tr>";
+													}
+												?>
+												
+											</tbody>
+										</table>
+									</div>
+
+									<br>
+									<div class="mb-6">
+										<label for="setting-input-6" class="form-label bg-info">question about teacher to be answered by co-teacher</label>
+										<table class="table app-table-hover mb-0 text-left">
+											<thead>
+												<tr>
+												<th class="cell">No.</th>
+												<th class="cell">Questions</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+											        
+													<?php 
+													
+												 	while ($row = mysqli_fetch_array ($res_7)) {
+												 		echo "<tr>";
+														 echo "<td>" .$row['number']."</td>";
+														echo "<td>" .$row['content']."</td>";
+														echo "<td>
+													<a href='delete_question.php?number="
+												.$row['number']."'
+													>Delete</a>
+												   </td>"; 
+														echo "<td>
+													   </td>"; 
+														echo "</tr>";
+													}
+												?>
+												
+											</tbody>
+										</table>
+									</div>
+
+									<br>
+									<div class="mb-7">
+										<label for="setting-input-7" class="form-label bg-info">question about co-teacher to be answered by teacher</label>
+										<table class="table app-table-hover mb-0 text-left">
+											<thead>
+												<tr>
+												<th class="cell">No.</th>
+												<th class="cell">Questions</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+											        
+													<?php 
+													
+												 	while ($row = mysqli_fetch_array ($res_8)) {
+												 		echo "<tr>";
+														 echo "<td>" .$row['number']."</td>";
+														echo "<td>" .$row['content']."</td>";
+														echo "<td>
+													<a href='delete_question.php?number="
+												.$row['number']."'
+													>Delete</a>
+												   </td>"; 
+														echo "<td>
+													   </td>"; 
+														echo "</tr>";
+													}
+												?>
+												
+											</tbody>
+										</table>
+									</div>
+								</form>
+							</div>
+
+							
 							<!--//app-card-body-->
 
 						</div>

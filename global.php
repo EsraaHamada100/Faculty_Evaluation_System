@@ -12,6 +12,12 @@ $res_1 = mysqli_query($connection ,"select * from teacher ");
 $res_2 = mysqli_query($connection ,"select * from co_teacher ");
 $res_3 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =1 ");
 $res_4 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =2");
+$res_5 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =3");
+$res_6 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =4");
+$res_7 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =5");
+$res_8 = mysqli_query($connection ,"SELECT * FROM `question` WHERE category_num =6");
+
+
 
 function getTeacherRatingData(){
     $stringforSql = 
