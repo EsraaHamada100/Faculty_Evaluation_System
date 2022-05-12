@@ -58,7 +58,7 @@ class Admin extends User{
         $sql = $string ;
         mysqli_query($GLOBALS['connection'], $sql);
     }
-    function getTeachersRating(){
+    static function getTeachersRating(){
         $sql = 
         "SELECT teacherID, SUM(num_of_answers) AS num_of_answers, round(SUM(rating) /COUNT(*), 1) AS total_rating FROM(
             SELECT teacherID, count(*) AS num_of_answers, round(SUM(answer) /COUNT(*), 1)AS rating FROM admin_answer_teacher
@@ -74,7 +74,7 @@ class Admin extends User{
             return $result;
     }
 
-    function getCo_teachersRating(){
+    static function getCo_teachersRating(){
         $sql = 
         "SELECT co_teacherID, SUM(num_of_answers) AS num_of_answers, round(SUM(rating) /COUNT(*), 1) AS total_rating FROM(
             SELECT co_teacherID, count(*) AS num_of_answers, round(SUM(answer) /COUNT(*), 1)AS rating FROM admin_answer_co_teacher
