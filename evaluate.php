@@ -111,7 +111,7 @@ require_once 'global.php';
 								<ul class="submenu-list list-unstyled">
 								<!----	<li class="submenu-item"><a class="submenu-link" href="evaluate.html">Teacher
 											</a></li>-->
-									<li class="submenu-item"><a class="submenu-link" href="evaluate.html">Co-Teacher
+									<li class="submenu-item"><a class="submenu-link" href="evaluate.php">Co-Teacher
 											</a></li>
 								</ul>
 							</div>
@@ -242,7 +242,7 @@ require_once 'global.php';
 		</div>
 		<!--//app-content-->
 		<div class="comment">
-            <h1>Add Comments</h1>
+            <h2>Add Comments</h2>
             <form action="#">
 			<!--
               <input type="text" name="full_name" placeholder="Full_name...">
@@ -253,6 +253,7 @@ require_once 'global.php';
               
             </form>
         </div>
+		
 
 	</div>
 	<!--//app-wrapper-->
