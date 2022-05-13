@@ -252,11 +252,7 @@ require_once 'global.php';
 							<div class="app-card-body">
 								<form class="settings-form">
 									<div class="mb-3">
-										<fieldset class="border border-info p-2 w-100">
-											<legend class="w-auto">Rating Legend</legend>
-											<p>5 = Strongly Agree, 4 = Agree, 3 = Uncertain, 2 = Disagree, 1 = Strongly
-												Disagree</p>
-										</fieldset><br>
+										<br>
 										<label for="setting-input-2" class="form-label bg-info"> question about teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -292,6 +288,7 @@ require_once 'global.php';
 										</table>
 									</div><br>
 									<div class="mb-3">
+										<br>
 										<label for="setting-input-3" class="form-label bg-info">question about co-teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -323,11 +320,8 @@ require_once 'global.php';
 											</tbody>
 										</table>
 									</div>
-								</form>
-							</div>
-
-							        <br>
-									<div class="mb-4">
+									<br>
+									<div class="mb-3">
 										<label for="setting-input-4" class="form-label bg-info">question about teacher to be answered by admin</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -361,7 +355,7 @@ require_once 'global.php';
 									</div>
 
 									<br>
-									<div class="mb-5">
+									<div class="mb-3">
 										<label for="setting-input-5" class="form-label bg-info">question about co-teacher to be answered by admin</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -395,7 +389,7 @@ require_once 'global.php';
 									</div>
 
 									<br>
-									<div class="mb-6">
+									<div class="mb-3">
 										<label for="setting-input-6" class="form-label bg-info">question about teacher to be answered by co-teacher</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -429,7 +423,7 @@ require_once 'global.php';
 									</div>
 
 									<br>
-									<div class="mb-7">
+									<div class="mb-3">
 										<label for="setting-input-7" class="form-label bg-info">question about co-teacher to be answered by teacher</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -461,6 +455,11 @@ require_once 'global.php';
 											</tbody>
 										</table>
 									</div>
+									
+								</form>
+							</div>
+
+
 								</form>
 							</div>
 
