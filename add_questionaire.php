@@ -25,7 +25,7 @@ require_once 'global.php';
 				document.cookie= "category_num="+selected_option_value;
 				alert("You have selected teacher :  " + selected_option_value);
 				<?php 
-					$_SESSION['category_num'] = $_COOKIE['category_num'];
+					// $_SESSION['category_num'] = $_COOKIE['category_num'];
 				
 				?>
 				

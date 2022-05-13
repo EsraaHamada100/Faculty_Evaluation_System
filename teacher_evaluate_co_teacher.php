@@ -241,38 +241,29 @@
 							
 													}
 													// $_SESSION['array_name'] = $array_name;
-													function getAnswers(){
+													// function getAnswers(){
 														$result = getQuestionForTeacher();
 														$answers = array();
 														while($row = mysqli_fetch_array($result) ){
 															$key = "'".$row['number']."'";
-															
+
 															echo '<script>
 															$(document).ready(function(){
 																$("input[type=\'radio\']").click(function(){
-																	var radioValue = $("input[name=\'rating'.$row["number"].'\']:checked").val();
-																	if(radioValue){
-
-												
-																		var text = """; 
-
-																	
-																		var key = text.concat($row["number"]," = ", text);
-
-																		document.cookie = key + radioValue;
-																		<?php $answers[$key] = $_COOKIE["radioValue"];?>
-																		
-																	}
+																	var key = <?php echo $row["number"];?> ;
+																	alert(key);
+																	var radioValue = $("input[name=\'rating12\']:checked").val();
+																	alert(radioValue);
 													
 																});
 															});
 															</script>';
 															// $answers[$key] = $_COOKIE['radioValue'];
 														}
-														$_SESSION['answers'] = $answers;
+														// $_SESSION['answers'] = $answers;
 														// header('Location: add_answers.php');
 														exit();
-													}
+													// }
 
 												?>
 											</tbody>

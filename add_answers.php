@@ -6,7 +6,16 @@ require_once 'global.php';
 
 //     echo $_COOKIE["'".$row['number']."'"].'<br>';
 // }
-echo "<pre>";
-print_r($_SESSION['answers']);
-echo "</pre>";
+
+$result = getQuestionForTeacher();
+
+while($row = mysqli_fetch_array($result) ){
+
+    $key = "'".$row['number']."'";
+    echo $_COOKIE[$key]."<br>" ;
+
+}
+// echo "<pre>";
+// print_r($_SESSION['answers']);
+// echo "</pre>";
 ?>
