@@ -2,7 +2,7 @@
 require_once 'global.php';
 require_once 'classes/class_question.php';
 $content=$_POST["content"];
-$category_num = $_SESSION["category_num"];
+$category_num = $_COOKIE["category_num"];
 
 $save = new class_question();
 $save->add_question($content,$category_num);
