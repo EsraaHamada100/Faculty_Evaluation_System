@@ -18,7 +18,11 @@
 		$(document).ready(function(){
 			$("select.form-select").change(function(){
 				var selected_option = $('#basicSelect option:selected').text();
-				alert("You have selected teacher :  " + selected_option);
+				var selected_option_value = $('#basicSelect option:selected').val();
+				// alert("You have selected co-teacher :  " + selected_option);
+				document.cookie = "co_teacherName = "+selected_option;
+				document.cookie = "co_teacherId = "+selected_option_value;
+				// alert("You have selected co-teacher with id :  " + selected_option_value);
 			});
 
 			
@@ -27,16 +31,16 @@
 
 
 	<script>
-		$(document).ready(function(){
-			$("input[type='radio']").click(function(){
-				var radioValue = $("input[name='rating11']:checked").val();
-				if(radioValue){
+		// $(document).ready(function(){
+		// 	$("input[type='radio']").click(function(){
+		// 		var radioValue = $("input[name='rating11']:checked").val();
+		// 		if(radioValue){
 
-					alert("Your are a - " + radioValue);
-				}
+		// 			alert("Your are a - " + radioValue);
+		// 		}
 	
-			});
-		});
+		// 	});
+		// });
 	</script>
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
@@ -169,7 +173,7 @@
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
 								<h1 class="app-page-title">Select Teacher</h1>
-								<form class="settings-form">
+								<form class="settings-form" action="add_answers.php">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Faculty</label>
 										<fieldset class="form-group">
@@ -177,7 +181,7 @@
 												<?php 
 													$result = co_teachersData();
 													while($row = mysqli_fetch_array($result)){
-														echo '<option value= "'.$row['id'].'">'.$row['username'].'</option>';
+														echo '<option value= "'.$row['ID'].'">'.$row['username'].'</option>';
 													}
 												
 												?>
@@ -185,7 +189,7 @@
 										</fieldset>
 
 									</div>
-									<!-- <button type="submit" class="btn app-btn-primary">Select</button> -->
+					
 								</form>
 							</div>
 							<!--//app-card-body-->
@@ -196,7 +200,7 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<form class="settings-form" action= "add_answers.php">
+								<form class="settings-form" method="POST" action="add_answers.php" >
 									<div class="mb-3">
 										
 										<table class="table app-table-hover mb-0 text-left">
@@ -211,7 +215,6 @@
 
 												<?php 
 													$result = getQuestionForTeacher();
-													$i = 0;
 													while($row = mysqli_fetch_array($result) ){
 														echo '<tr>
 														<td class="cell">'.$row['content'].'</td>
@@ -240,36 +243,36 @@
 													</tr>';
 							
 													}
-													// $_SESSION['array_name'] = $array_name;
-													// function getAnswers(){
+													
 														$result = getQuestionForTeacher();
-														$answers = array();
-														while($row = mysqli_fetch_array($result) ){
-															$key = "'".$row['number']."'";
 
+														while($row = mysqli_fetch_array($result) ){
+															$key = $row['number'];
+															// ok
 															echo '<script>
 															$(document).ready(function(){
 																$("input[type=\'radio\']").click(function(){
-																	var key = <?php echo $row["number"];?> ;
-																	alert(key);
-																	var radioValue = $("input[name=\'rating12\']:checked").val();
-																	alert(radioValue);
+																	var key ='.$key.';
+																	var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();;
+																	if(radioValue){
+																		var string = key+ " = " + radioValue;
+																		document.cookie = string;	
+																	}else {
+																		var string = key+ " = " + "undefined";
+																		document.cookie = string;	
+																	}
 													
 																});
 															});
 															</script>';
-															// $answers[$key] = $_COOKIE['radioValue'];
+															
 														}
-														// $_SESSION['answers'] = $answers;
-														// header('Location: add_answers.php');
-														exit();
-													// }
 
 												?>
 											</tbody>
 										</table>
 										<br><br>
-										<button class="submit-button" type="submit"action="<?php getAnswers();?>">Submit</button>
+										<button class="submit-button" type="submit" name= "test" ><input type="radio">Submit</button>
 									</div>
 								</div>
 								

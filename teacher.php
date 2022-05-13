@@ -57,6 +57,13 @@ class Teacher extends User implements FacultyMember {
         $result = mysqli_query($GLOBALS['connection'], $sql);
         return $result;
     }
+    static function submitTeacherAnswers($teacherId, $co_teacherId, $questionNumber, $answer){
+
+        $sql = "INSERT INTO teacher_answer_co_teacher(teacherID,co_teacherID,question_number, answer
+        )VALUES(".$teacherId.",".$co_teacherId.", ".$questionNumber.", ".$answer.");";
+        mysqli_query($GLOBALS['connection'], $sql);
+
+    }
 
 
 }
