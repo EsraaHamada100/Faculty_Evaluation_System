@@ -13,11 +13,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- select option -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	
 	<script>
 		$(document).ready(function(){
 			$("select.form-select").change(function(){
 				var selected_option = $('#basicSelect option:selected').text();
 				alert("You have selected teacher :  " + selected_option);
+			});
+
+			
+		});
+	</script>
+
+
+	<script>
+		$(document).ready(function(){
+			$("input[type='radio']").click(function(){
+				var radioValue = $("input[name='rating11']:checked").val();
+				if(radioValue){
+
+					alert("Your are a - " + radioValue);
+				}
+	
 			});
 		});
 	</script>
@@ -179,7 +196,7 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<form class="settings-form">
+								<form class="settings-form" action= "add_answers.php">
 									<div class="mb-3">
 										
 										<table class="table app-table-hover mb-0 text-left">
@@ -194,6 +211,7 @@
 
 												<?php 
 													$result = getQuestionForTeacher();
+													$i = 0;
 													while($row = mysqli_fetch_array($result) ){
 														echo '<tr>
 														<td class="cell">'.$row['content'].'</td>
@@ -220,12 +238,47 @@
 															</td>
 														</span>
 													</tr>';
+							
 													}
+													// $_SESSION['array_name'] = $array_name;
+													function getAnswers(){
+														$result = getQuestionForTeacher();
+														$answers = array();
+														while($row = mysqli_fetch_array($result) ){
+															$key = "'".$row['number']."'";
+															
+															echo '<script>
+															$(document).ready(function(){
+																$("input[type=\'radio\']").click(function(){
+																	var radioValue = $("input[name=\'rating'.$row["number"].'\']:checked").val();
+																	if(radioValue){
+
+												
+																		var text = """; 
+
+																	
+																		var key = text.concat($row["number"]," = ", text);
+
+																		document.cookie = key + radioValue;
+																		<?php $answers[$key] = $_COOKIE["radioValue"];?>
+																		
+																	}
+													
+																});
+															});
+															</script>';
+															// $answers[$key] = $_COOKIE['radioValue'];
+														}
+														$_SESSION['answers'] = $answers;
+														// header('Location: add_answers.php');
+														exit();
+													}
+
 												?>
 											</tbody>
 										</table>
 										<br><br>
-										<button class="submit-button" type="submit" >Submit</button>
+										<button class="submit-button" type="submit"action="<?php getAnswers();?>">Submit</button>
 									</div>
 								</div>
 								

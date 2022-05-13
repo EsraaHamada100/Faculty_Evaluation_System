@@ -22,11 +22,13 @@ require_once 'global.php';
 			$("select.form-select").change(function(){
 				var selected_option = $('#basicSelect option:selected').text();
 				var selected_option_value = $('#basicSelect option:selected').val();
-				<?php $abc = "<script>document.write(selected_option_value)</script>";
-				$_SESSION["category_num"] = $abc ;
+				document.cookie= "category_num="+selected_option_value;
+				alert("You have selected teacher :  " + selected_option_value);
+				<?php 
+					$_SESSION['category_num'] = $_COOKIE['category_num'];
 				
 				?>
-				alert("You have selected teacher :  " + selected_option_value);
+				
 			});
 
 			

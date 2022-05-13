@@ -21,8 +21,8 @@ public function get_question($question) {
       }
 public function add_question ($question,$category){
   $string1 = '"'.$question.'"' ;
-  $sql = 'INSERT INTO question ( content, category_num ,adminID) VALUES ('.$string1.','.$category.','.$_SESSION["id"].')';
- 
+  $sql = 'INSERT INTO question (category_num, content ,adminID) VALUES ('.$category.','.$string1.','.$_SESSION["id"].')';
+
   mysqli_query($GLOBALS['connection'], $sql);
 
 }
