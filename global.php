@@ -64,7 +64,8 @@ function getTeacherComments(){
 
 function getTeacherCommentsAndRating(){
     $stringforSql = 
-    "SELECT student.username, content,round(SUM(student_answer_teacher.answer) /COUNT(*), 1)AS rating
+    "SELECT student.username, content,round(
+    SUM(student_answer_teacher.answer) /COUNT(*), 1)AS rating
     FROM comment_to_teacher
     JOIN student
     ON student.ID = comment_to_teacher.studentID

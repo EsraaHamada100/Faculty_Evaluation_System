@@ -41,7 +41,7 @@
 									role="button" aria-expanded="false">
 									<img src="assets/images/admin.png" alt="" srcset=""></a>
 								<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-									<li><a class="dropdown-item" href="teacher.html">Account</a></li>
+									<li><a class="dropdown-item" href="teacher_dashboard.php">Account</a></li>
 									<li>
 										<hr class="dropdown-divider">
 									</li>
@@ -65,7 +65,7 @@
 			<div class="sidepanel-inner d-flex flex-column">
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
-					<a class="app-logo" href="teacher.html"><i class="fa fa-graduation-cap fa-2x"></i><span
+					<a class="app-logo" href="teacher_dashboard.php"><i class="fa fa-graduation-cap fa-2x"></i><span
 							class="logo-text"> FMS | TEACHER</span></a>
 
 				</div>
@@ -75,7 +75,7 @@
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher.html">
+							<a class="nav-link" href="teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
