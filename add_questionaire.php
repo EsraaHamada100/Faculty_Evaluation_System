@@ -290,7 +290,8 @@ require_once 'global.php';
 												</tr>
 											</tbody>
 										</table>
-									</div><br>
+									</div>
+									<br>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label bg-info">question about co-teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
