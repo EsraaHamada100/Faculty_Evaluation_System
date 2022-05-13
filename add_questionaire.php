@@ -253,7 +253,7 @@ require_once 'global.php';
 								<form class="settings-form">
 									<div class="mb-3">
 										<br>
-										<label for="setting-input-2" class="form-label bg-info"> question about teacher to be answered by student</label>
+										<label for="setting-input-2" class="form-label bg-info">1-question about teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -289,8 +289,10 @@ require_once 'global.php';
 									</div>
 									<br>
 									<div class="mb-3">
+									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
+
 										<br>
-										<label for="setting-input-3" class="form-label bg-info">question about co-teacher to be answered by student</label>
+										<label for="setting-input-3" class="form-label bg-info">2-question about co-teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -323,7 +325,9 @@ require_once 'global.php';
 									</div>
 									<br>
 									<div class="mb-3">
-										<label for="setting-input-4" class="form-label bg-info">question about teacher to be answered by admin</label>
+									<label for="setting-input-7">------------------------------------------------------------------------------------------------------</label>
+                                     <br>
+										<label for="setting-input-4" class="form-label bg-info">3-question about teacher to be answered by admin</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -357,7 +361,9 @@ require_once 'global.php';
 
 									<br>
 									<div class="mb-3">
-										<label for="setting-input-5" class="form-label bg-info">question about co-teacher to be answered by admin</label>
+									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
+                                     <br>
+										<label for="setting-input-5" class="form-label bg-info">4-question about co-teacher to be answered by admin</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -391,7 +397,9 @@ require_once 'global.php';
 
 									<br>
 									<div class="mb-3">
-										<label for="setting-input-6" class="form-label bg-info">question about teacher to be answered by co-teacher</label>
+									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
+                                     <br>
+										<label for="setting-input-6" class="form-label bg-info">5-question about teacher to be answered by co-teacher</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -425,7 +433,9 @@ require_once 'global.php';
 
 									<br>
 									<div class="mb-3">
-										<label for="setting-input-7" class="form-label bg-info">question about co-teacher to be answered by teacher</label>
+									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
+                                     <br>
+										<label for="setting-input-7" class="form-label bg-info">6-question about co-teacher to be answered by teacher</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
