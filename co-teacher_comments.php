@@ -1,27 +1,23 @@
-<?php 
-	require_once "teacher.php" ;
-?>
+<?php require "global.php"; ?>
 <!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
-
 <head>
-	<title>Faculty Evaluation System</title>
-
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- FontAwesome JS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Testimonials Section | CodingNepal</title>
+    <link rel="stylesheet" href="teacher_comments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
-	<!-- App CSS -->
-	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
-
+    <!-- App CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 </head>
 
 <body class="app">
-	<header class="app-header fixed-top">
+
+<header class="app-header fixed-top">
 		<div class="app-header-inner">
 			<div class="container-fluid py-2">
 				<div class="app-header-content">
@@ -70,7 +66,7 @@
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
 					<a class="app-logo" href="teacher_dashboard.php"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> FMS | Teacher</span></a>
+							class="logo-text"> FMS | Co-Teacher</span></a>
 
 				</div>
 				<!--//app-branding-->
@@ -79,7 +75,7 @@
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_dashboard.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
@@ -89,7 +85,7 @@
 						<!-- view rating -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_rating.php">
+							<a class="nav-link" href="co-teacher_rating.php">
 								<span class="nav-icon"><i class="fa fa-star"></i></span>
 								<span class="nav-link-text">View Rating</span>
 							</a>
@@ -98,7 +94,7 @@
 						<!-- See comments -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_comments.php">
+							<a class="nav-link" href="co-teacher_comments.php">
 								<span class="nav-icon"><i class="fa fa-comment"></i></span>
 								<span class="nav-link-text">See Comments</span>
 							</a>
@@ -107,7 +103,7 @@
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_evaluate_co_teacher.php">
+							<a class="nav-link" href="co-teacher_evaluate_teacher.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 							</a>
@@ -123,58 +119,47 @@
 		</div>
 		<!--//app-sidepanel-->
 	</header>
-	<!--//app-header-->
 
 	<div class="app-wrapper">
 
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
 
-				<h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-home"></i></span> Dashboard</h1>
+				<h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-comment"></i></span> Comments</h1>
+
+                <div class="wrapper">
+
+				
 
 
-				<div class="row g-4 mb-4">
-					<div class="col-6 col-lg-6">
-						<div class="app-card app-card-stat shadow-sm h-100"><br>
-							<span class="nav-icon"><i class="fa fa-star fa-5x text-info"></i></span>
-							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">Rating</h4>
-								<div class="stats-figure">
-									<?php 
-										$result = Teacher::getTotalNumberOfRating();
-										if($row = mysqli_fetch_array($result)){
-											echo $row['total_rating'];
-										}
+
+					<?php
+					$result = getTeacherComments();
+					while($row = mysqli_fetch_array($result)){
+					echo  '<div class="box">
+					<i class="fas fa-quote-left quote"></i>
+					<p>'.$row['content'].'</p>
+					<div class="content">
+					<div class="info">
+					
+					<div class="stars">
+									<i class=""></i>
+									<i class=""></i>
+									<i class=""></i>
+									<i class=""></i>
+									<i class=""></i>
 									
-									?>
 								</div>
+								<div class="job">'.$row['username'].'</div>
 							</div>
-							<!--//app-card-body-->
 						</div>
-						<!--//app-card-->
-					</div>
-					<!--//col-->
-					<div class="col-6 col-lg-6">
-						<div class="app-card app-card-stat shadow-sm h-100"><br>
-							<span class="nav-icon"><i class="fa fa-comments fa-5x text-warning"></i></span>
-							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">comments</h4>
-								<div class="stats-figure">
-									<?php
-										$result = Teacher::getTotalNumberOfComments();
-										if($row = mysqli_fetch_array($result)){
-											echo $row['total_comments'];
-										}
-									
-									?>
-								</div>
-							</div>
-							<!--//app-card-body-->
-						</div>
-						<!--//app-card-->
-					</div>
-					<!--//col-->
-				</div>
+						
+					</div>';
+					}
+					?>
+
+  </div>
+
 				<!--//row-->
 			</div>
 			<!--//container-fluid-->
@@ -183,7 +168,6 @@
 
 	</div>
 	<!--//app-wrapper-->
-
 
 	<!-- Javascript -->
 	<script src="assets/plugins/popper.min.js"></script>
@@ -196,6 +180,8 @@
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>
 
-</body>
 
+
+
+</body>
 </html>

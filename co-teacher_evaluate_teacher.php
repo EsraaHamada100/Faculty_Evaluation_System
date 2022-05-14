@@ -104,7 +104,7 @@
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
 					<a class="app-logo" href="teacher_dashboard.php"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> FMS | TEACHER</span></a>
+							class="logo-text"> FMS | Co-Teacher</span></a>
 
 				</div>
 				<!--//app-branding-->
@@ -113,7 +113,7 @@
 				<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_dashboard.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
@@ -123,7 +123,7 @@
 						<!-- view rating -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_dashboard.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-star"></i></span>
 								<span class="nav-link-text">View Rating</span>
 							</a>
@@ -132,7 +132,7 @@
 						<!-- See comments -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_comments.php">
+							<a class="nav-link" href="co-teacher_comments.php">
 								<span class="nav-icon"><i class="fa fa-comment"></i></span>
 								<span class="nav-link-text">See Comments</span>
 							</a>
@@ -141,7 +141,7 @@
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_evaluate_co_teacher.php">
+							<a class="nav-link" href="co-teacher_evaluate_teacher.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 							</a>
@@ -172,8 +172,7 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<h1 class="app-page-title">Select 
-									Teacher</h1>
+								<h1 class="app-page-title">Select Co-Teacher</h1>
 								<form class="settings-form" action="add_answers.php">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Faculty</label>

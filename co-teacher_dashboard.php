@@ -70,7 +70,7 @@
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
 					<a class="app-logo" href="teacher_dashboard.php"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> FMS | Teacher</span></a>
+							class="logo-text"> FMS | Co-Teacher</span></a>
 
 				</div>
 				<!--//app-branding-->
@@ -79,7 +79,7 @@
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_dashboard.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
@@ -89,7 +89,7 @@
 						<!-- view rating -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_rating.php">
+							<a class="nav-link" href="co-teacher_rating.php">
 								<span class="nav-icon"><i class="fa fa-star"></i></span>
 								<span class="nav-link-text">View Rating</span>
 							</a>
@@ -98,7 +98,7 @@
 						<!-- See comments -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_comments.php">
+							<a class="nav-link" href="co-teacher_comments.php">
 								<span class="nav-icon"><i class="fa fa-comment"></i></span>
 								<span class="nav-link-text">See Comments</span>
 							</a>
@@ -107,7 +107,7 @@
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_evaluate_co_teacher.php">
+							<a class="nav-link" href="co-teacher_evaluate_teacher.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 							</a>
