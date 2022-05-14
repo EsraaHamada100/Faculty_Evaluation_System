@@ -117,7 +117,18 @@ require_once 'global.php';
 								</ul>
 							</div>
 						</li>
+						<li class="nav-item">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link" href="feedback (1).html">
+								<span class="nav-icon"><i class="fa fa-users"></i></span>
+								<span class="nav-link-text">Comments</span>
+							</a>
+							<!--//nav-link-->
+						</li>
+					
+
 					</ul>
+					
 					<!--//app-menu-->
 				</nav>
 				<!--//app-nav-->
@@ -240,28 +251,7 @@ require_once 'global.php';
 				<!--//row-->
 			</div>
 			<!--//container-fluid-->
-		</div>
 		
-            <h2>Add Comments</h2>
-            <form action="#">
-			<!--
-              <input type="text" name="full_name" placeholder="Full_name...">
-              <input type="email" name="email" placeholder="Email Address..">
-			-->
-              <textarea name="comment" id="" cols="30" rows="10" placeholder="Type Your Comment..."></textarea>
-              <button type="submit" class="btnyy" onclick="openPopup()">Submit</button>
-            </form>
-			
-		<div class="popup" id="popup">
-				<img src="assets/images/404-tick.png">
-				<h2>Thank You!</h2>
-				<p>Your details has been successfully submitted. Thankes!</p>
-				<button type="button" onclick="closePopup()">Ok</button>
-
-		</div>
-		
-
-	</div>
 	<!--//app-wrapper-->
 
 
