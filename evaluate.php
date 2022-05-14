@@ -116,8 +116,7 @@ require_once 'global.php';
 											
 								</ul>
 							</div>
-						</li>
-						<li class="nav-item">
+							<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
 							<a class="nav-link" href="feedback (1).html">
 								<span class="nav-icon"><i class="fa fa-users"></i></span>
@@ -125,8 +124,8 @@ require_once 'global.php';
 							</a>
 							<!--//nav-link-->
 						</li>
-					
-
+						</li>
+						
 					</ul>
 					
 					<!--//app-menu-->
