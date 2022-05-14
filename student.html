@@ -67,7 +67,7 @@
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
 					<a class="app-logo" href="index.html"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> FMS | STUDENT</span></a>
+							class="logo-text"> | STUDENT</span></a>
 
 				</div>
 				<!--//app-branding-->
@@ -85,10 +85,25 @@
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="evaluate.php">
+							<!-- <a class="nav-link" href="evaluate.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
+								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span> -->
+								<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2"
+								aria-expanded="false" aria-controls="submenu-2">
+								<span class="nav-icon"><i class="fa fa-users"></i></span>
+								<span class="nav-link-text">Evaluate </span>
+								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
 							</a>
+							<div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
+								<ul class="submenu-list list-unstyled">
+								<li class="submenu-item"><a class="submenu-link" href="evaluate.php">Teacher
+											</a></li>
+								<li class="submenu-item"><a class="submenu-link" href="evaluate_co.php">Co-Teacher
+											</a></li>
+											
+								</ul>
+							</div>
 							<!--//nav-link-->
 						</li>
 						<!--//nav-item-->

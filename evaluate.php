@@ -102,17 +102,18 @@ require_once 'global.php';
 							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2"
 								aria-expanded="false" aria-controls="submenu-2">
 								<span class="nav-icon"><i class="fa fa-users"></i></span>
-								<span class="nav-link-text">Evaluate Teacher</span>
+								<span class="nav-link-text">Evaluate </span>
 								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
 								<!--//submenu-arrow-->
 							</a>
 							<!--//nav-link-->
 							<div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-								<!----	<li class="submenu-item"><a class="submenu-link" href="evaluate.html">Teacher
-											</a></li>-->
-									<li class="submenu-item"><a class="submenu-link" href="evaluate.php">Co-Teacher
+								<li class="submenu-item"><a class="submenu-link" href="evaluate.php">Teacher
 											</a></li>
+								<li class="submenu-item"><a class="submenu-link" href="evaluate_co.php">Co-Teacher
+											</a></li>
+											
 								</ul>
 							</div>
 						</li>

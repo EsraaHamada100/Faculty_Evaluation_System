@@ -22,8 +22,8 @@ function findUser($tableName, $pageLink){
     }
 }
 findUser('admin', 'index.php');
-findUser('teacher','teacher.html');
-findUser('co_teacher', 'co_teacher.html');
+findUser('teacher','teacher_dashboard.php');
+findUser('co_teacher', 'co_teacher_dashboard.php');
 findUser('student', 'student.html');
 $_SERVER['PHP_SELF'];
 
