@@ -241,7 +241,7 @@ require_once 'global.php';
 			</div>
 			<!--//container-fluid-->
 		</div>
-		<div class="comment">
+		
             <h2>Add Comments</h2>
             <form action="#">
 			<!--
@@ -252,7 +252,6 @@ require_once 'global.php';
               <button type="submit" class="btnyy" onclick="openPopup()">Submit</button>
             </form>
 			
-        </div>
 		<div class="popup" id="popup">
 				<img src="assets/images/404-tick.png">
 				<h2>Thank You!</h2>
