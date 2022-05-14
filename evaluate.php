@@ -240,7 +240,6 @@ require_once 'global.php';
 			</div>
 			<!--//container-fluid-->
 		</div>
-		<!--//app-content-->
 		<div class="comment">
             <h2>Add Comments</h2>
             <form action="#">
