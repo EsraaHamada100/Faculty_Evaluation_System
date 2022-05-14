@@ -24,20 +24,20 @@ abstract class User {
         }
     } 
     function getId(){
-        return $id;
+        return $this->id;
     }
     function setId($id){
       $this->id = $id;
     }
     function getName(){
-        return $name;
+        return $this->name;
     }
     function setName($name){
         $this->name = $name;
     }
 
     function getPassword(){
-        return $password;
+        return $this->password;
     }
     function setPassword($password){
         $this->password = $password;
