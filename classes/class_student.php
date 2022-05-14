@@ -61,6 +61,11 @@ class Student extends User {
         $result = mysqli_query($GLOBALS['connection'], $sql);
         return $result;
     }
+    function submitStudentAnswersAboutTeacher($teacherId, $questionNumber, $answer){
+        $sql = "INSERT INTO student_answer_teacher(studentID, teacherID,question_number, answer
+        )VALUES(".$this->getId().",".$teacherId.", ".$questionNumber.", ".$answer.");";
+        mysqli_query($GLOBALS['connection'], $sql);
+    }
 }
 
 ?>

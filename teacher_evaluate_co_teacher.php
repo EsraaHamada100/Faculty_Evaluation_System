@@ -272,7 +272,7 @@
 											</tbody>
 										</table>
 										<br><br>
-										<button class="submit-button" type="submit" name= "test" ><input type="radio">Submit</button>
+										<button class="submit-button" type="submit" name= "test" >Submit</button>
 									</div>
 								</div>
 								

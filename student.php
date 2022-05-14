@@ -90,7 +90,7 @@ require_once "classes/class_student.php";
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<!-- <a class="nav-link" href="evaluate.php">
+							<!-- <a class="nav-link" href="student_evaluate_teacher.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span> -->
@@ -102,7 +102,7 @@ require_once "classes/class_student.php";
 							</a>
 							<div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
 								<ul class="submenu-list list-unstyled">
-								<li class="submenu-item"><a class="submenu-link" href="evaluate.php">Teacher
+								<li class="submenu-item"><a class="submenu-link" href="student_evaluate_teacher.php">Teacher
 											</a></li>
 								<li class="submenu-item"><a class="submenu-link" href="evaluate_co.php">Co-Teacher
 											</a></li>

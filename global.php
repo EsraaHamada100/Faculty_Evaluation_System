@@ -108,6 +108,14 @@ function getQuestionForStudentAboutTeacher(){
     return $result;
 }
 
+function getQuestionForStudentAboutCo_teacher(){
+    $sql = 
+    "SELECT number, content
+    FROM question
+    WHERE category_num = 2";
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
 
 
 

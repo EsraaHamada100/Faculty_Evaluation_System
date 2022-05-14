@@ -13,7 +13,24 @@ require_once 'global.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="evaluation.css">
 	<!-- FontAwesome JS-->
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("select.form-select").change(function(){
+
+				var selected_option = $('#basicSelect option:selected').text();
+				var selected_option_value = $('#basicSelect option:selected').val();
+				document.cookie = "teacherName = "+selected_option;
+				document.cookie = "teacherId = "+selected_option_value;
+			});
+
+			
+		});
+	</script>
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+
+
 
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
@@ -137,131 +154,154 @@ require_once 'global.php';
 
 
 				<div class="row g-4 mb-4">
+					<form>
+						<div class="col-12 col-md-12">
+							<div class="app-card app-card-settings shadow-sm p-4">
+								<div class="app-card-body">
+									<h1 class="app-page-title">Select Teacher</h1>
+									<form class="settings-form" method="POST">
+										<div class="mb-3">
 
-					<div class="col-12 col-md-12">
-						<div class="app-card app-card-settings shadow-sm p-4">
-							<div class="app-card-body">
-								<h1 class="app-page-title">Select Faculty</h1>
-								<form class="settings-form">
-									<div class="mb-3">
-										<!---
-										<label for="setting-input-2" class="form-label">Faculty Member</label>
-										<fieldset class="form-group">
-											<select class="form-select" id="basicSelect">
-												<option>Teacher</option>
-												<option>Co-Teacher</option>
-										
-											</select>
-										</fieldset>
-									-->
-										<label for="setting-input-2" class="form-label">Name</label>
-										<fieldset class="form-group">
-											<select class="form-select" id="basicSelect">
-												<?php 
-													$result = teachersData();
-													while($row = mysqli_fetch_array($result)){
-														echo '<option value= "'.$row['ID'].'">'.$row['username'].'</option>';
-													}
+											<label for="setting-input-2" class="form-label">Name</label>
+											<fieldset class="form-group">
+												<select class="form-select" id="basicSelect">
+													<?php 
+														$result = teachersData();
+														while($row = mysqli_fetch_array($result)){
+															echo '<option value= "'.$row['ID'].'">'.$row['username'].'</option>';
+														}
+													
+													?>
+												</select>
+											</fieldset>
+											
+											
+										</div>
+										<!-- <button type="submit" class="btn app-btn-primary">Select</button> -->
+									</form>
+								</div>
+								<!--//app-card-body-->
+
+							</div>
+							<!--//app-card-->
+						</div>
+						
+						<!-- questions table -->
+						<div class="col-12 col-md-12">
+							
+							<div class="app-card app-card-settings shadow-sm p-4">
+								<div class="app-card-body">
+									
+										<div class="mb-3">
 												
-												?>
-											</select>
-										</fieldset>
+												<table class="table app-table-hover mb-0 text-left">
+													<thead>
+														<tr>
+															<th class="cell">Questions</th>
+
+															<th class="cell">answer</th>
+														</tr>
+													</thead>
+													<tbody>
+
+
+													<?php 
+															$result = getQuestionForStudentAboutTeacher();
+															while($row = mysqli_fetch_array($result) ){
+																echo '<tr>
+																<td class="cell">'.$row['content'].'</td>
+																<span class="star-rating">
+			
+																	<td>
+																	<ul class="rate-area">
+																	<input type="radio" id="5-star'.$row['number'].'" name="rating'.$row['number'].'" value="5" />
+																	<label for="5-star'.$row['number'].'" title="Amazing">5 stars</label>
+
+																	<input type="radio" id="4-star'.$row['number'].'" name="rating'.$row['number'].'" value="4" />
+																	<label for="4-star'.$row['number'].'" title="Good">4 stars</label>
+
+																	<input type="radio" id="3-star'.$row['number'].'" name="rating'.$row['number'].'" value="3" />
+																	<label for="3-star'.$row['number'].'" title="Average">3 stars</label>
+
+																	<input type="radio" id="2-star'.$row['number'].'" name="rating'.$row['number'].'" value="2" />
+																	<label for="2-star'.$row['number'].'" title="Not Good">2 stars</label>
+
+																	<input type="radio" id="1-star'.$row['number'].'" name="rating'.$row['number'].'" value="1" />
+																	<label for="1-star'.$row['number'].'" title="Bad">1 star</label>
+
+																</ul>
+																	</td>
+																</span>
+															</tr>';
+									
+															}
+															
+																$result = getQuestionForStudentAboutTeacher();
+
+																while($row = mysqli_fetch_array($result) ){
+																	$key = $row['number'];
+																	// ok
+																	echo '<script>
+																	$(document).ready(function(){
+																		$("input[type=\'radio\']").click(function(){
+																			var key ='.$key.';
+																			var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();
+																			if(radioValue){
+																				var string = key+ " = " + radioValue;
+																				document.cookie = string;	
+																			}else {
+																				var string = key+ " = " + "undefined";
+																				document.cookie = string;	
+																			}
+															
+																		});
+																	});
+																	</script>';
+																	
+																}
+
+														?>
+													</tbody>
+												</table>
+												
+											</div>
 										
-										
-									</div>
-									<button type="submit" class="btn app-btn-primary">Select</button>
-								</form>
+								</div>
+								<!--//app-card-body-->
+
 							</div>
-							<!--//app-card-body-->
+							<!--//app-card-->
 
 						</div>
-						<!--//app-card-->
-					</div>
-					<div class="col-12 col-md-12">
-						<div class="app-card app-card-settings shadow-sm p-4">
-							<div class="app-card-body">
-								<form class="settings-form">
-								<div class="mb-3">
-										
-										<table class="table app-table-hover mb-0 text-left">
-											<thead>
-												<tr>
-													<th class="cell">Questions</th>
 
-													<th class="cell">answer</th>
-												</tr>
-											</thead>
-											<tbody>
 
-												<?php 
-													$result = getQuestionForStudentAboutTeacher();
-													while($row = mysqli_fetch_array($result) ){
+						<!-- comment section -->
+						<h2>Add Comment</h2>
 
-														echo '<tr>
-														<td class="cell">'.$row['content'].'</td>
-														<span class="star-rating">
-	
-															<td>
-															<ul class="rate-area">
-															<input type="radio" id="5-star'.$row['number'].'" name="rating'.$row['number'].'" value="5" />
-															<label for="5-star'.$row['number'].'" title="Amazing">5 stars</label>
-
-															<input type="radio" id="4-star'.$row['number'].'" name="rating'.$row['number'].'" value="4" />
-															<label for="4-star'.$row['number'].'" title="Good">4 stars</label>
-
-															<input type="radio" id="3-star'.$row['number'].'" name="rating'.$row['number'].'" value="3" />
-															<label for="3-star'.$row['number'].'" title="Average">3 stars</label>
-
-															<input type="radio" id="2-star'.$row['number'].'" name="rating'.$row['number'].'" value="2" />
-															<label for="2-star'.$row['number'].'" title="Not Good">2 stars</label>
-
-															<input type="radio" id="1-star'.$row['number'].'" name="rating'.$row['number'].'" value="1" />
-															<label for="1-star'.$row['number'].'" title="Bad">1 star</label>
-
-														  </ul>
-															</td>
-														</span>
-													</tr>';
-													}
-												?>
-											</tbody>
-										</table>
-										
-					
-									</div>
-								</form>
-							</div>
-							<!--//app-card-body-->
-
+						<div class="app-card-body">
+							
+							<textarea name="comment" id="" cols="60" rows="10" placeholder="Type Your Comment..."></textarea>
+							<br><br>
+							
 						</div>
-						<!--//app-card-->
-					</div>
+						<!-- submit button -->
+						<div class="button">
+							<button type="submit" class="btnyy" onclick="" style="width:30%;height:50px;align:center;">Submit</button>
+						</div>
+						<!--//app-card-body-->
+
+
+
+
+					</form>
 				</div>
 				<!--//row-->
+
+
+
 			</div>
 			<!--//container-fluid-->
-		</div>
-		<!--//app-content-->
-		<div class="comment">
-            <h2>Add Comments</h2>
-            <form action="#">
-			<!--
-              <input type="text" name="full_name" placeholder="Full_name...">
-              <input type="email" name="email" placeholder="Email Address..">
-			-->
-              <textarea name="comment" id="" cols="30" rows="10" placeholder="Type Your Comment..."></textarea>
-              <button type="submit" class="btnyy" onclick="openPopup()">Submit</button>
-            </form>
-			
-        </div>
-		<div class="popup" id="popup">
-				<img src="assets/images/404-tick.png">
-				<h2>Thank You!</h2>
-				<p>Your details has been successfully submitted. Thankes!</p>
-				<button type="button" onclick="closePopup()">Ok</button>
-
-		</div>
-		
+		</div>	
 
 	</div>
 	<!--//app-wrapper-->
@@ -274,20 +314,6 @@ require_once 'global.php';
 	<!-- Charts JS -->
 	<script src="assets/plugins/chart.js/chart.min.js"></script>
 	<script src="assets/js/index-charts.js"></script>
-
-	<!-- Page Specific JS -->
-	<script src="assets/js/app.js"></script>
-	<!----- popup--->
-	<script>
-		let popup=document.getElementById("popup");
-		function openPopup() {
-			popup.classList.add("open-popup");
-		}
-		function closePopup() {
-			popup.classList.remove("open-popup");
-		}
-
-	</script>
 
 </body>
 

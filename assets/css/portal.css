@@ -12402,13 +12402,19 @@ input[type="radio"]:checked+label span {
 }
  /* Hagar's Code */
 .comment textarea{
-    width:100%;
+    align : center;
+    border:1px solid #999999;
+    width:150%;
+    margin:5px 0;
+    padding:1%;
     height: 150px;
-    
+    position : relative;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
+
+// Hager's code
 .popup{
     width: 400px;
     background: #fff;
@@ -12452,9 +12458,4 @@ input[type="radio"]:checked+label span {
     transform: translate(-5%,-50%) scale(1);
 
 
-}
-.btnyy{
-    color: #fff;
-    background-color: #1bd07d;
-    border-color: #18ba70
 }
