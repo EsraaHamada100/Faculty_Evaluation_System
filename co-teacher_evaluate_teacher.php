@@ -1,5 +1,5 @@
-<?php
-require_once 'global.php';
+<?php 
+	require_once 'global.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +11,46 @@ require_once 'global.php';
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="evaluation.css">
+	<!-- select option -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$("select.form-select").change(function(){
+				var selected_option = $('#basicSelect option:selected').text();
+				var selected_option_value = $('#basicSelect option:selected').val();
+				// alert("You have selected co-teacher :  " + selected_option);
+				document.cookie = "co_teacherName = "+selected_option;
+				document.cookie = "co_teacherId = "+selected_option_value;
+				// alert("You have selected co-teacher with id :  " + selected_option_value);
+			});
+
+			
+		});
+	</script>
+
+
+	<script>
+		// $(document).ready(function(){
+		// 	$("input[type='radio']").click(function(){
+		// 		var radioValue = $("input[name='rating11']:checked").val();
+		// 		if(radioValue){
+
+		// 			alert("Your are a - " + radioValue);
+		// 		}
+	
+		// 	});
+		// });
+	</script>
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
+	
+
+
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
+	<link id="theme-style" rel="stylesheet" href="evaluation.css">
 
 </head>
 
@@ -69,65 +103,52 @@ require_once 'global.php';
 			<div class="sidepanel-inner d-flex flex-column">
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
-					<a class="app-logo" href="index.html"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> FMS | STUDENT</span></a>
+					<a class="app-logo" href="teacher_dashboard.php"><i class="fa fa-graduation-cap fa-2x"></i><span
+							class="logo-text"> FMS | Co-Teacher</span></a>
 
 				</div>
 				<!--//app-branding-->
 
 				<nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
-					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
+				<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="student.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
 							<!--//nav-link-->
 						</li>
-						<!--//nav-item-->
-						
-						<!--<li class="nav-item">-->
+						<!-- nav item -->
+						<!-- view rating -->
+						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<!--<a class="nav-link" href="evaluate.html">
+							<a class="nav-link" href="co-teacher_dashboard.php">
+								<span class="nav-icon"><i class="fa fa-star"></i></span>
+								<span class="nav-link-text">View Rating</span>
+							</a>
+							<!--//nav-link-->
+						</li>
+						<!-- See comments -->
+						<li class="nav-item">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link" href="co-teacher_comments.php">
+								<span class="nav-icon"><i class="fa fa-comment"></i></span>
+								<span class="nav-link-text">See Comments</span>
+							</a>
+							<!--//nav-link-->
+						</li>
+						<!--//nav-item-->
+						<li class="nav-item">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link" href="co-teacher_evaluate_teacher.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 							</a>
-						-->
 							<!--//nav-link-->
-						<!--</li>--->
+						</li>
 						<!--//nav-item-->
-						<li class="nav-item has-submenu">
-							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2"
-								aria-expanded="false" aria-controls="submenu-2">
-								<span class="nav-icon"><i class="fa fa-users"></i></span>
-								<span class="nav-link-text">Evaluate </span>
-								<span class="submenu-arrow"><i class="fa fa-angle-down"></i></span>
-								<!--//submenu-arrow-->
-							</a>
-							<!--//nav-link-->
-							<div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
-								<ul class="submenu-list list-unstyled">
-								<li class="submenu-item"><a class="submenu-link" href="evaluate.php">Teacher
-											</a></li>
-								<li class="submenu-item"><a class="submenu-link" href="student_evaluate_co_teacher.php">Co-Teacher
-											</a></li>
-											
-								</ul>
-							</div>
-							<li class="nav-item">
-							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="feedback (1).html">
-								<span class="nav-icon"><i class="fa fa-users"></i></span>
-								<span class="nav-link-text">Comments</span>
-							</a>
-							<!--//nav-link-->
-						</li>
-						</li>
-						
 					</ul>
-					
 					<!--//app-menu-->
 				</nav>
 				<!--//app-nav-->
@@ -151,35 +172,24 @@ require_once 'global.php';
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<h1 class="app-page-title">Select Faculty</h1>
-								<form class="settings-form">
+								<h1 class="app-page-title">Select Co-Teacher</h1>
+								<form class="settings-form" action="add_answers.php">
 									<div class="mb-3">
-										<!---
-										<label for="setting-input-2" class="form-label">Faculty Member</label>
-										<fieldset class="form-group">
-											<select class="form-select" id="basicSelect">
-												<option>Teacher</option>
-												<option>Co-Teacher</option>
-										
-											</select>
-										</fieldset>
-									-->
-										<label for="setting-input-2" class="form-label">Name</label>
+										<label for="setting-input-2" class="form-label">Faculty</label>
 										<fieldset class="form-group">
 											<select class="form-select" id="basicSelect">
 												<?php 
-													$result = teachersData();
+													$result = co_teachersData();
 													while($row = mysqli_fetch_array($result)){
-														echo '<option value= "'.$row['id'].'">'.$row['username'].'</option>';
+														echo '<option value= "'.$row['ID'].'">'.$row['username'].'</option>';
 													}
 												
 												?>
 											</select>
 										</fieldset>
-										
-										
+
 									</div>
-									<button type="submit" class="btn app-btn-primary">Select</button>
+					
 								</form>
 							</div>
 							<!--//app-card-body-->
@@ -190,8 +200,8 @@ require_once 'global.php';
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<form class="settings-form">
-								<div class="mb-3">
+								<form class="settings-form" method="POST" action="add_answers.php" >
+									<div class="mb-3">
 										
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -204,9 +214,8 @@ require_once 'global.php';
 											<tbody>
 
 												<?php 
-													$result = getQuestionForStudentAboutTeacher();
+													$result = getQuestionForTeacher();
 													while($row = mysqli_fetch_array($result) ){
-
 														echo '<tr>
 														<td class="cell">'.$row['content'].'</td>
 														<span class="star-rating">
@@ -232,15 +241,45 @@ require_once 'global.php';
 															</td>
 														</span>
 													</tr>';
+							
 													}
+													
+														$result = getQuestionForTeacher();
+
+														while($row = mysqli_fetch_array($result) ){
+															$key = $row['number'];
+															// ok
+															echo '<script>
+															$(document).ready(function(){
+																$("input[type=\'radio\']").click(function(){
+																	var key ='.$key.';
+																	var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();;
+																	if(radioValue){
+																		var string = key+ " = " + radioValue;
+																		document.cookie = string;	
+																	}else {
+																		var string = key+ " = " + "undefined";
+																		document.cookie = string;	
+																	}
+													
+																});
+															});
+															</script>';
+															
+														}
+
 												?>
 											</tbody>
 										</table>
-										
-					
+										<br><br>
+										<button class="submit-button" type="submit" name= "test" >Submit</button>
 									</div>
-								</form>
-							</div>
+								</div>
+								
+								
+							</form>
+							
+						</div>
 							<!--//app-card-body-->
 
 						</div>
@@ -250,7 +289,10 @@ require_once 'global.php';
 				<!--//row-->
 			</div>
 			<!--//container-fluid-->
-		
+		</div>
+		<!--//app-content-->
+
+	</div>
 	<!--//app-wrapper-->
 
 
@@ -264,17 +306,7 @@ require_once 'global.php';
 
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>
-	<!----- popup--->
-	<script>
-		let popup=document.getElementById("popup");
-		function openPopup() {
-			popup.classList.add("open-popup");
-		}
-		function closePopup() {
-			popup.classList.remove("open-popup");
-		}
 
-	</script>
 
 </body>
 

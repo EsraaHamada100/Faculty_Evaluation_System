@@ -1,22 +1,22 @@
-<?php 
-	require_once "teacher.php" ;
-?>
+<?php require 'global.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Faculty Evaluation System</title>
+	<title>Evaluation</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<link id="theme-style" rel="stylesheet" href="dataTables/jquery.dataTables.min.css">
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
 	<!-- App CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
+
 
 </head>
 
@@ -45,7 +45,7 @@
 									role="button" aria-expanded="false">
 									<img src="assets/images/admin.png" alt="" srcset=""></a>
 								<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-									<li><a class="dropdown-item" href="teacher_dashboard.php">Account</a></li>
+									<li><a class="dropdown-item" href="account.html">Account</a></li>
 									<li>
 										<hr class="dropdown-divider">
 									</li>
@@ -69,17 +69,17 @@
 			<div class="sidepanel-inner d-flex flex-column">
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
-					<a class="app-logo" href="teacher_dashboard.php"><i class="fa fa-graduation-cap fa-2x"></i><span
-							class="logo-text"> FMS | Teacher</span></a>
+					<a class="app-logo" href="index.html"><i class="fa fa-graduation-cap fa-2x"></i><span
+							class="logo-text">FMS | Co-Teacher</span></a>
 
 				</div>
 				<!--//app-branding-->
 
 				<nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
-					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
+				<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_dashboard.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
@@ -89,7 +89,7 @@
 						<!-- view rating -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_rating.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-star"></i></span>
 								<span class="nav-link-text">View Rating</span>
 							</a>
@@ -98,7 +98,7 @@
 						<!-- See comments -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_comments.php">
+							<a class="nav-link" href="co-teacher_comments.php">
 								<span class="nav-icon"><i class="fa fa-comment"></i></span>
 								<span class="nav-link-text">See Comments</span>
 							</a>
@@ -107,7 +107,7 @@
 						<!--//nav-item-->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_evaluate_co_teacher.php">
+							<a class="nav-link" href="co-teacher_evaluate_teacher.php">
 								<span class="nav-icon"><i class="fa fa-book"></i></span>
 								<span class="nav-link-text">Evaluate</span>
 							</a>
@@ -129,53 +129,52 @@
 
 		<div class="app-content pt-3 p-md-3 p-lg-4">
 			<div class="container-xl">
+				<h1 class="app-page-title text-success"><span class="nav-icon"><i class="fa fa-star"></i></span> Rating</h1>
+				<hr class="mb-4">
+				<div class="row g-4 settings-section">
+					<div class="col-12 col-md-12">
+						<div class="app-card app-card-settings shadow-sm p-4">
+							<div class="app-card-body">
+								<form class="settings-form">
+									<div class="mb-3">
+										<table id="myTable" class="table app-table-hover mb-0 text-left">
+											<thead>
 
-				<h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-home"></i></span> Dashboard</h1>
-
-
-				<div class="row g-4 mb-4">
-					<div class="col-6 col-lg-6">
-						<div class="app-card app-card-stat shadow-sm h-100"><br>
-							<span class="nav-icon"><i class="fa fa-star fa-5x text-info"></i></span>
-							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">Rating</h4>
-								<div class="stats-figure">
-									<?php 
-										$result = Teacher::getTotalNumberOfRating();
-										if($row = mysqli_fetch_array($result)){
-											echo $row['total_rating'];
-										}
-									
-									?>
-								</div>
+												<tr>
+													<th class="cell">Question</th>
+													<th class="cell">Number of answers</th>
+													<th class="cell">Rating</th>
+												</tr>
+											</thead>
+											<tbody>
+											<?php
+												
+													
+													$result = getTeacherRatingData();
+													while($row = mysqli_fetch_array($result)){
+															echo '<tr>
+															<th class="cell">'.$row["content"].'</th>
+															<th class="cell">'.$row["num_of_answers"].'</th>
+															<th class="cell">'.$row['rating'].'</th>
+													    </tr>';
+													}
+												?>
+											
+												
+											</tbody>
+										</table>
+									</div>
+								</form>
 							</div>
 							<!--//app-card-body-->
+
 						</div>
 						<!--//app-card-->
 					</div>
-					<!--//col-->
-					<div class="col-6 col-lg-6">
-						<div class="app-card app-card-stat shadow-sm h-100"><br>
-							<span class="nav-icon"><i class="fa fa-comments fa-5x text-warning"></i></span>
-							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">comments</h4>
-								<div class="stats-figure">
-									<?php
-										$result = Teacher::getTotalNumberOfComments();
-										if($row = mysqli_fetch_array($result)){
-											echo $row['total_comments'];
-										}
-									
-									?>
-								</div>
-							</div>
-							<!--//app-card-body-->
-						</div>
-						<!--//app-card-->
-					</div>
-					<!--//col-->
 				</div>
 				<!--//row-->
+
+				<hr class="my-4">
 			</div>
 			<!--//container-fluid-->
 		</div>
@@ -189,13 +188,17 @@
 	<script src="assets/plugins/popper.min.js"></script>
 	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- Charts JS -->
-	<script src="assets/plugins/chart.js/chart.min.js"></script>
-	<script src="assets/js/index-charts.js"></script>
-
 	<!-- Page Specific JS -->
 	<script src="assets/js/app.js"></script>
 
+	<!-- Datatables -->
+	<!-- <script src="dataTables/jquery-3.5.1.js"></script>
+	<script src="dataTables/jquery.dataTables.min.js"></script> -->
+	<script>
+		$(document).ready(function () {
+			$('#myTable').DataTable();
+		});
+	</script>
 </body>
 
 </html>

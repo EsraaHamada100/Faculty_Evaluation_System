@@ -172,7 +172,8 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<h1 class="app-page-title">Select Teacher</h1>
+								<h1 class="app-page-title">Select 
+									Teacher</h1>
 								<form class="settings-form" action="add_answers.php">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Faculty</label>
