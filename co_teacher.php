@@ -56,5 +56,13 @@ class Co_teacher implements FacultyMember{
         $result = mysqli_query($GLOBALS['connection'], $sql);
         return $result;
     }
+
+    static function getTotalNumberOfRating(){
+
+    }
+    static function getTotalNumberOfComments(){
+
+        
+    }
 }
 ?>

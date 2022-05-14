@@ -23,7 +23,7 @@ function findUser($tableName, $pageLink){
 }
 findUser('admin', 'index.php');
 findUser('teacher','teacher_dashboard.php');
-findUser('co_teacher', 'co_teacher_dashboard.php');
+findUser('co_teacher', 'co_teacher.html');
 findUser('student', 'student.php');
 $_SERVER['PHP_SELF'];
 
