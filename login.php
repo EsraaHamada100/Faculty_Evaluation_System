@@ -46,7 +46,7 @@
 									<div class="d-flex justify-content-between"><!--forgot-password text-left-->
 										<!-- <a href="teacher_dashboard.php" >teacher</a>
 										<a href="co_teacher_dashboard.php" >co-teacher</a>
-										<a href="student.html">Student</a> -->
+										<a href="student.php">Student</a> -->
 										<!-- <div>
 											<input id="option-one" name="radio" value="one" checked="checked" type="radio">
 											<label for="option-one">student</label>

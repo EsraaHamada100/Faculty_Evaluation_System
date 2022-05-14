@@ -1,3 +1,8 @@
+<?php
+require_once "global.php";
+require_once "classes/class_student.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,7 +81,7 @@
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="student.html">
+							<a class="nav-link" href="student.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
@@ -131,8 +136,19 @@
 						<div class="app-card app-card-stat shadow-sm h-100"><br>
 							<span class="nav-icon"><i class="fa fa-users fa-5x text-info"></i></span>
 							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">Faculty</h4>
-								<div class="stats-figure">12</div>
+								<h4 class="stats-type mb-1">Evaluated Faculty Members</h4>
+								<div class="stats-figure">
+									<?php
+										$student1 = new Student();
+										$student1->setId($_SESSION['id']);
+										$result = $student1->numberOfFacultyMembersEvaluated();
+										if($row = mysqli_fetch_array($result)){
+											echo $row['faculty_member_evaluated'];
+										}
+
+									
+									?>
+								</div>
 							</div>
 							<!--//app-card-body-->
 						</div>
@@ -141,10 +157,17 @@
 					<!--//col-->
 					<div class="col-6 col-lg-6">
 						<div class="app-card app-card-stat shadow-sm h-100"><br>
-							<span class="nav-icon"><i class="fa fa-file fa-5x text-warning"></i></span>
+							<span class="nav-icon"><i class="fa fa-comment fa-5x text-warning"></i></span>
 							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">Faculty Evaluated</h4>
-								<div class="stats-figure">5</div>
+								<h4 class="stats-type mb-1">Written Comments</h4>
+								<div class="stats-figure">
+									<?php
+										$result = $student1->numberOfWrittenComments();
+										if($row = mysqli_fetch_array($result)){
+											echo $row['total_comments'];
+										}
+									?>
+								</div>
 							</div>
 							<!--//app-card-body-->
 						</div>

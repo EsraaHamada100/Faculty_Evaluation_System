@@ -79,7 +79,7 @@ require_once 'global.php';
 					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="student.html">
+							<a class="nav-link" href="student.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
