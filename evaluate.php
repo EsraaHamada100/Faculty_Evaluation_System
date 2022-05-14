@@ -111,7 +111,7 @@ require_once 'global.php';
 								<ul class="submenu-list list-unstyled">
 								<li class="submenu-item"><a class="submenu-link" href="evaluate.php">Teacher
 											</a></li>
-								<li class="submenu-item"><a class="submenu-link" href="evaluate_co.php">Co-Teacher
+								<li class="submenu-item"><a class="submenu-link" href="student_evaluate_co_teacher.php">Co-Teacher
 											</a></li>
 											
 								</ul>

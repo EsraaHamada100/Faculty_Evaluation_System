@@ -104,7 +104,7 @@ require_once "classes/class_student.php";
 								<ul class="submenu-list list-unstyled">
 								<li class="submenu-item"><a class="submenu-link" href="student_evaluate_teacher.php">Teacher
 											</a></li>
-								<li class="submenu-item"><a class="submenu-link" href="evaluate_co.php">Co-Teacher
+								<li class="submenu-item"><a class="submenu-link" href="student_evaluate_co_teacher.php">Co-Teacher
 											</a></li>
 											
 								</ul>

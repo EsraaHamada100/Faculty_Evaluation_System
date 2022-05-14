@@ -66,6 +66,21 @@ class Student extends User {
         )VALUES(".$this->getId().",".$teacherId.", ".$questionNumber.", ".$answer.");";
         mysqli_query($GLOBALS['connection'], $sql);
     }
+
+    function submitStudentAnswersAboutCo_teacher($co_teacherId, $questionNumber, $answer){
+        $sql = "INSERT INTO student_answer_co_teacher(studentID, co_teacherID,question_number, answer
+        )VALUES(".$this->getId().",".$co_teacherId.", ".$questionNumber.", ".$answer.");";
+        mysqli_query($GLOBALS['connection'], $sql);
+    }
+
+    function SendCommentsToTeacher($content, $teacherId){
+        $sql = 'INSERT INTO comment_to_teacher(content, studentID, teacherID)VALUES("'.$content.'",'.$this->getId().','.$teacherId.');';
+        mysqli_query($GLOBALS['connection'], $sql);
+    }
+    function SendCommentsToCo_teacher($content, $co_teacherId){
+        $sql = 'INSERT INTO comment_to_co_teacher(content, studentID, co_teacherID)VALUES("'.$content.'",'.$this->getId().','.$co_teacherId.');';
+        mysqli_query($GLOBALS['connection'], $sql);
+    }
 }
 
 ?>

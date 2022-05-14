@@ -128,7 +128,7 @@ require_once 'global.php';
 								<ul class="submenu-list list-unstyled">
 								<li class="submenu-item"><a class="submenu-link" href="student_evaluate_teacher.php">Teacher
 											</a></li>
-								<li class="submenu-item"><a class="submenu-link" href="evaluate_co.php">Co-Teacher
+								<li class="submenu-item"><a class="submenu-link" href="student_evaluate_co_teacher.php">Co-Teacher
 											</a></li>
 											
 								</ul>
@@ -154,12 +154,12 @@ require_once 'global.php';
 
 
 				<div class="row g-4 mb-4">
-					<form>
+					<form action="add_student_answers_teacher.php" method="POST">
+
 						<div class="col-12 col-md-12">
 							<div class="app-card app-card-settings shadow-sm p-4">
 								<div class="app-card-body">
 									<h1 class="app-page-title">Select Teacher</h1>
-									<form class="settings-form" method="POST">
 										<div class="mb-3">
 
 											<label for="setting-input-2" class="form-label">Name</label>
@@ -178,7 +178,6 @@ require_once 'global.php';
 											
 										</div>
 										<!-- <button type="submit" class="btn app-btn-primary">Select</button> -->
-									</form>
 								</div>
 								<!--//app-card-body-->
 
@@ -284,15 +283,13 @@ require_once 'global.php';
 							<br><br>
 							
 						</div>
+
 						<!-- submit button -->
 						<div class="button">
-							<button type="submit" class="btnyy" onclick="" style="width:30%;height:50px;align:center;">Submit</button>
+							<button type="submit" class="btnyy" style="width:30%;height:50px;" action="add_student_answers_teacher.php">Submit</button>
 						</div>
 						<!--//app-card-body-->
-
-
-
-
+						
 					</form>
 				</div>
 				<!--//row-->
