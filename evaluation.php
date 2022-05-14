@@ -275,7 +275,7 @@ require_once 'admin.php';
 														WHERE ID = '.$row["co_teacherID"];
 														$result2 = mysqli_query($GLOBALS['connection'], $sql);
 														$row2 = mysqli_fetch_array($result2);
-														$co_teacherName=$row1["username"];
+														$co_teacherName=$row2["username"];
 														echo '<tr>
 														<th class="cell">'.$co_teacherName.'</th>
 														<th class="cell">'.$row["num_of_answers"].'</th>
