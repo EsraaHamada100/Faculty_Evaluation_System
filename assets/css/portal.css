@@ -12403,9 +12403,9 @@ input[type="radio"]:checked+label span {
  /* Hagar's Code */
 .comment{
     bottom:-45%;
-    right:20%;
-    position: absolute;
-    transform: translate(-50%,-50%);
+    right:-15%;
+    position: relative;
+   /* transform: translate(-50%,-50%);*/
     width:500px;
 }
 .comment textarea{
