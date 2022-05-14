@@ -78,7 +78,7 @@
                 <ul class="app-menu list-unstyled accordion" id="menu-accordion">
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="co_teacher.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-home"></i></span>
 								<span class="nav-link-text">Dashboard</span>
 							</a>
@@ -97,7 +97,7 @@
 						<!-- See comments -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="co_teacher.php">
+							<a class="nav-link" href="co-teacher_dashboard.php">
 								<span class="nav-icon"><i class="fa fa-comment"></i></span>
 								<span class="nav-link-text">See Comments</span>
 							</a>

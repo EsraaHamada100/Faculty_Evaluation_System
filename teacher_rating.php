@@ -69,7 +69,7 @@
 			<div class="sidepanel-inner d-flex flex-column">
 				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
 				<div class="app-branding">
-					<a class="app-logo" href="index.html"><i class="fa fa-graduation-cap fa-2x"></i><span
+					<a class="app-logo" href="teacher_dashboard.php"><i class="fa fa-graduation-cap fa-2x"></i><span
 							class="logo-text">FMS | TEACHER</span></a>
 
 				</div>
