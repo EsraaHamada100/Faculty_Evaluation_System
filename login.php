@@ -1,4 +1,13 @@
-
+<?php
+session_start();
+if(isset($_SESSION['login_error'])){
+	if($_SESSION['login_error'] == 1){
+		echo "<script>
+		alert('Make sure that you entered a correct username and password');
+		</script>";
+	}
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

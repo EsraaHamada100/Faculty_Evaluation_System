@@ -49,7 +49,7 @@
 									<li>
 										<hr class="dropdown-divider">
 									</li>
-									<li><a class="dropdown-item" href="login.php">Log Out</a></li>
+									<li><a class="dropdown-item" href="<?php session_unset();session_destroy();$log_out = "login.php";echo $log_out ?>">Log Out</a></li>
 								</ul>
 							</div>
 							<!--//app-user-dropdown-->

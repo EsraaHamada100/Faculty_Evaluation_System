@@ -16,16 +16,15 @@ function findUser($tableName, $pageLink){
                 $_SESSION['id'] = $row['ID'];
                 $_SESSION['userName'] = $row['username'] ;
                 $_SESSION['type'] = $tableName ;
-                // exit();
+                $_SESSION['login_error'] = 0;
+                exit();
             }
         }
     }
 }
 function userNotFound(){
-     echo "<script>
-    alert('Make sure that you entered a correct username and password');
-    </script>";
-    // header("Location: login.php");
+    $_SESSION['login_error'] = 1;
+    header("Location: login.php");
 }
 findUser('admin', 'index.php');
 findUser('teacher','teacher_dashboard.php');
