@@ -49,11 +49,8 @@ require_once 'global.php';
 									<img src="assets/images/admin.png" alt="" srcset=""></a>
 								<ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
 									<!-- <li><a class="dropdown-item" href="account.php">Account</a></li> -->
-									<li>
-										<hr class="dropdown-divider">
-									</li>
-									<li><a class="dropdown-item" href="login.php">Log Out</a></li>
-								</ul>
+
+									<li><a class="dropdown-item" href="login.php">Log Out</a></li>								</ul>
 							</div>
 							<!--//app-user-dropdown-->
 
