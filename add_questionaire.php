@@ -23,11 +23,6 @@ require_once 'global.php';
 				var selected_option = $('#basicSelect option:selected').text();
 				var selected_option_value = $('#basicSelect option:selected').val();
 				document.cookie= "category_num="+selected_option_value;
-				alert("You have selected teacher :  " + selected_option_value);
-				<?php 
-					// $_SESSION['category_num'] = $_COOKIE['category_num'];
-				
-				?>
 				
 			});
 
@@ -225,8 +220,6 @@ require_once 'global.php';
 											<select class="form-select" id="basicSelect">
 												<option value = "1">question about teacher to be answered by student</option>
 												<option value = "2">question about co-teacher to be answered by student</option>
-												<option value = "3">question about teacher to be answered by admin</option>
-												<option value = "4">question about co-teacher to be answered by admin</option>
 												<option value = "5">question about teacher to be answered by co-teacher</option>
 												<option value = "6">question about co-teacher to be answered by teacher</option>
 											</select>
@@ -264,31 +257,31 @@ require_once 'global.php';
 										
 													<?php 
 													
-													while ($row = mysqli_fetch_array ($res_3)) {
-														echo "<tr>";
+															while ($row = mysqli_fetch_array ($res_3)) {
+																echo "<tr>";
 
-													    echo "<td>" .$row['number']."</td>";
-														echo "<td>" .$row['content']."</td>";
-														echo "<td>
-													<a href='delete_question.php?number="
-												.$row['number']."'
-													>Delete</a>
-												   </td>"; 
-														// echo "<td>" .$row['username']."</td>";
-														echo "<td>
-													   </td>"; 
-														echo "</tr>";
+																echo "<td>" .$row['number']."</td>";
+																echo "<td>" .$row['content']."</td>";
+																echo "<td>
+															<a href='delete_question.php?number="
+														.$row['number']."'
+															>Delete</a>
+														</td>"; 
+																// echo "<td>" .$row['username']."</td>";
+																echo "<td>
+															</td>"; 
+																echo "</tr>";
 													}
-												?>
+													?>
 												</tr>
 											</tbody>
 										</table>
 									</div>
 									<br>
 									<div class="mb-3">
-									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
+									<label for="setting-input-7" >-----------------------------------------------------------------------------------------------</label>
 
-										<br>
+										<br><br>
 										<label for="setting-input-3" class="form-label bg-info">2-question about co-teacher to be answered by student</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
@@ -320,83 +313,13 @@ require_once 'global.php';
 											</tbody>
 										</table>
 									</div>
-									<br>
-									<div class="mb-3">
-									<label for="setting-input-7">------------------------------------------------------------------------------------------------------</label>
-                                     <br>
-										<label for="setting-input-4" class="form-label bg-info">3-question about teacher to be answered by admin</label>
-										<table class="table app-table-hover mb-0 text-left">
-											<thead>
-												<tr>
-												<th class="cell">No.</th>
-												<th class="cell">Questions</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-											        
-													<?php 
-													
-												 	while ($row = mysqli_fetch_array ($res_5)) {
-												 		echo "<tr>";
-														 echo "<td>" .$row['number']."</td>";
-														echo "<td>" .$row['content']."</td>";
-														echo "<td>
-													<a href='delete_question.php?number="
-												.$row['number']."'
-													>Delete</a>
-												   </td>"; 
-														echo "<td>
-													   </td>"; 
-														echo "</tr>";
-													}
-												?>
-												
-											</tbody>
-										</table>
-									</div>
+
 
 									<br>
 									<div class="mb-3">
-									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
-                                     <br>
-										<label for="setting-input-5" class="form-label bg-info">4-question about co-teacher to be answered by admin</label>
-										<table class="table app-table-hover mb-0 text-left">
-											<thead>
-												<tr>
-												<th class="cell">No.</th>
-												<th class="cell">Questions</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-											        
-													<?php 
-													
-												 	while ($row = mysqli_fetch_array ($res_6)) {
-												 		echo "<tr>";
-														 echo "<td>" .$row['number']."</td>";
-														echo "<td>" .$row['content']."</td>";
-														echo "<td>
-													<a href='delete_question.php?number="
-												.$row['number']."'
-													>Delete</a>
-												   </td>"; 
-														echo "<td>
-													   </td>"; 
-														echo "</tr>";
-													}
-												?>
-												
-											</tbody>
-										</table>
-									</div>
-
-									<br>
-									<div class="mb-3">
-									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
-                                     <br>
-										<label for="setting-input-6" class="form-label bg-info">5-question about teacher to be answered by co-teacher</label>
+									<label for="setting-input-7" >-----------------------------------------------------------------------------------------------</label>
+                                     <br><br>
+										<label for="setting-input-6" class="form-label bg-info">3-question about teacher to be answered by co-teacher</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
@@ -430,9 +353,9 @@ require_once 'global.php';
 
 									<br>
 									<div class="mb-3">
-									<label for="setting-input-7" >------------------------------------------------------------------------------------------------------</label>
-                                     <br>
-										<label for="setting-input-7" class="form-label bg-info">6-question about co-teacher to be answered by teacher</label>
+									<label for="setting-input-7" >-----------------------------------------------------------------------------------------------</label>
+                                     <br><br>
+										<label for="setting-input-7" class="form-label bg-info">4-question about co-teacher to be answered by teacher</label>
 										<table class="table app-table-hover mb-0 text-left">
 											<thead>
 												<tr>
