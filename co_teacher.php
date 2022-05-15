@@ -92,7 +92,15 @@ class Co_teacher implements FacultyMember{
 
         $sql = "INSERT INTO co_teacher_answer_teacher(co_teacherID,teacherID,question_number, answer
         )VALUES(".$co_teacherId.",".$teacherId.", ".$questionNumber.", ".$answer.");";
-        mysqli_query($GLOBALS['connection'], $sql);
+        try{
+            mysqli_query($GLOBALS['connection'], $sql);
+            return true;
+        }catch(Exception $e){
+            echo "<script>
+                alert('You answer questions about this teacher before');
+            </script>";
+            return false;
+        }
 
     }
 }

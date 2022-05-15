@@ -6,13 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Testimonials Section | CodingNepal</title>
-    <link rel="stylesheet" href="teacher_comments.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    	<!-- FontAwesome JS-->
-	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+	<link rel="stylesheet" href="teacher_comments.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	<!-- FontAwesome JS-->
+	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+	
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
+
 </head>
 
 <body class="app">
@@ -116,55 +118,32 @@
 		</div>
 		<!--//app-sidepanel-->
 	</header>
+	<body>
 
-	<div class="app-wrapper">
+	<div class="wrapper">
 
-		<div class="app-content pt-3 p-md-3 p-lg-4">
-			<div class="container-xl">
+		<?php
+		$result = getCo_teacherComments();
+		while($row = mysqli_fetch_array($result)){
+		echo  '
+		<div class="box">
+		<i class="fas fa-quote-left quote"></i>
+		<p>'.$row['content'].'</p>
+			<div class="content">
+				<div class="info">
 
-				<h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-comment"></i></span> Comments</h1>
-
-                <div class="wrapper">
-
-				
-
-
-
-					<?php
-					$result = getCo_teacherComments();
-					while($row = mysqli_fetch_array($result)){
-					echo  '<div class="box">
-					<i class="fas fa-quote-left quote"></i>
-					<p>'.$row['content'].'</p>
-					<div class="content">
-					<div class="info">
+					<div class="job">'.$row['username'].'</div>
 					
-					<div class="stars">
-									<i class=""></i>
-									<i class=""></i>
-									<i class=""></i>
-									<i class=""></i>
-									<i class=""></i>
-									
-								</div>
-								<div class="job">'.$row['username'].'</div>
-							</div>
-						</div>
-						
-					</div>';
-					}
-					?>
-
-  </div>
-
-				<!--//row-->
+				</div>
 			</div>
-			<!--//container-fluid-->
-		</div>
-		<!--//app-content-->
+			
+		</div>';
+		}
+		?>
 
 	</div>
-	<!--//app-wrapper-->
+
+
 
 	<!-- Javascript -->
 	<script src="assets/plugins/popper.min.js"></script>

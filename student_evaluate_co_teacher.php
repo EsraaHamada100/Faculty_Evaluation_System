@@ -21,13 +21,39 @@ require_once 'global.php';
 
 				var selected_option = $('#basicSelect option:selected').text();
 				var selected_option_value = $('#basicSelect option:selected').val();
-				document.cookie = "co_teacherName = "+selected_option;
-				document.cookie = "co_teacherId = "+selected_option_value;
+				document.cookie = "st_co_teacherName = "+selected_option;
+				document.cookie = "st_co_teacherId = "+selected_option_value;
+
 			});
 
 			
 		});
 	</script>
+
+	<?php
+		$result = getQuestionForStudentAboutCo_teacher();
+
+		while($row = mysqli_fetch_array($result) ){
+			$key = $row['number'];
+			// ok
+			echo '<script>
+			
+				var key ='.$key.';
+				var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();
+				if(radioValue){
+					var string = key+ " = " + radioValue;
+					document.cookie = string;	
+				}else {
+					var string = key+ " = " + "undefined";
+					document.cookie = string;	
+				}
+
+			</script>';
+			
+		}
+	?>
+
+
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
 

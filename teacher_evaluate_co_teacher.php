@@ -30,18 +30,29 @@
 	</script>
 
 
-	<script>
-		// $(document).ready(function(){
-		// 	$("input[type='radio']").click(function(){
-		// 		var radioValue = $("input[name='rating11']:checked").val();
-		// 		if(radioValue){
+	<?php
+		$result = getQuestionForTeacher();
 
-		// 			alert("Your are a - " + radioValue);
-		// 		}
+		while($row = mysqli_fetch_array($result) ){
+			$key = $row['number'];
+			// ok
+			echo '<script>
+			
+				var key ='.$key.';
+				var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();
+				if(radioValue){
+					var string = key+ " = " + radioValue;
+					document.cookie = string;	
+				}else {
+					var string = key+ " = " + "undefined";
+					document.cookie = string;	
+				}
+
+			</script>';
+			
+		}
+	?>
 	
-		// 	});
-		// });
-	</script>
 	<!-- FontAwesome JS-->
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
 
@@ -242,29 +253,29 @@
 							
 													}
 													
-														$result = getQuestionForTeacher();
+													$result = getQuestionForTeacher();
 
-														while($row = mysqli_fetch_array($result) ){
-															$key = $row['number'];
-															// ok
-															echo '<script>
-															$(document).ready(function(){
-																$("input[type=\'radio\']").click(function(){
-																	var key ='.$key.';
-																	var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();;
-																	if(radioValue){
-																		var string = key+ " = " + radioValue;
-																		document.cookie = string;	
-																	}else {
-																		var string = key+ " = " + "undefined";
-																		document.cookie = string;	
-																	}
-													
-																});
+													while($row = mysqli_fetch_array($result) ){
+														$key = $row['number'];
+														// ok
+														echo '<script>
+														$(document).ready(function(){
+															$("input[type=\'radio\']").click(function(){
+																var key ='.$key.';
+																var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();
+																if(radioValue){
+																	var string = key+ " = " + radioValue;
+																	document.cookie = string;	
+																}else {
+																	var string = key+ " = " + "undefined";
+																	document.cookie = string;	
+																}
+												
 															});
-															</script>';
-															
-														}
+														});
+														</script>';
+														
+													}
 
 												?>
 											</tbody>

@@ -19,16 +19,42 @@ require_once 'global.php';
 		$(document).ready(function(){
 			$("select.form-select").change(function(){
 
+				// alert("Hello"+$_COOKIE['st_teacherName']);
+				alert("Hello");
 				var selected_option = $('#basicSelect option:selected').text();
 				var selected_option_value = $('#basicSelect option:selected').val();
-				document.cookie = "teacherName = "+selected_option;
-				document.cookie = "teacherId = "+selected_option_value;
+				document.cookie = "st_teacherName = "+selected_option;
+				document.cookie = "st_teacherId = "+selected_option_value;
 			});
 
 			
 		});
 	</script>
+	
 	<script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+
+	<?php
+		$result = getQuestionForStudentAboutTeacher();
+
+		while($row = mysqli_fetch_array($result) ){
+			$key = $row['number'];
+			// ok
+			echo '<script>
+			
+				var key ='.$key.';
+				var radioValue = $("input[name=\'rating'.$key.'\']:checked").val();
+				if(radioValue){
+					var string = key+ " = " + radioValue;
+					document.cookie = string;	
+				}else {
+					var string = key+ " = " + "undefined";
+					document.cookie = string;	
+				}
+
+			</script>';
+			
+		}
+	?>
 
 
 

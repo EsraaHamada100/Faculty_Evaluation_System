@@ -11,7 +11,10 @@ while($row = mysqli_fetch_array($result) ){
 
     $key = $row['number'];
     if($_COOKIE[$row['number']] != "undefined"){
-        $student1->submitStudentAnswersAboutCo_teacher( $_COOKIE["co_teacherId"],$row['number'] ,$_COOKIE[$key]);
+        $check = $student1->submitStudentAnswersAboutCo_teacher( $_COOKIE["st_co_teacherId"],$row['number'] ,$_COOKIE[$key]);
+        if($check == false){
+            break;
+        }
         // echo $row['number']."<br>".$_COOKIE[$row['number']]."<br>" ;
     }
 
@@ -21,10 +24,21 @@ if (isset($_POST['comment'])) {
     $tirm = trim(htmlentities($_POST['comment']));
     if($tirm != ""){
     // Escape any html characters
-    $student1->SendCommentsToCo_teacher($tirm,$_COOKIE["co_teacherId"]);
+    $student1->SendCommentsToCo_teacher($tirm,$_COOKIE["st_co_teacherId"]);
     }
 }
-echo '<script>alert("Your review has been successfully added");</script>' ;
+// echo '<script>alert("Your review has been successfully added");</script>' ;
 
-header("Location: student_evaluate_co_teacher.php");
+// header("Location: student_evaluate_co_teacher.php");
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- <meta http-equiv="refresh" content="0;url=student_evaluate_co_teacher.php" /> -->
+    </head>
+
+    <body>
+    </body>
+</html>

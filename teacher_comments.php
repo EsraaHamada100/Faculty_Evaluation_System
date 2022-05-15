@@ -116,54 +116,30 @@
 		</div>
 		<!--//app-sidepanel-->
 	</header>
+	<body>
+	<h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-comment"></i></span> Comments</h1>
+	<div class="wrapper">
 
-	<div class="app-wrapper">
+		<?php
+		$result = getTeacherComments();
+		while($row = mysqli_fetch_array($result)){
+		echo  '
+		<div class="box">
+			<i class="fas fa-quote-left quote"></i>
+			<p>'.$row['content'].'</p>
+			<div class="content">
+				<div class="info">
 
-		<div class="app-content pt-3 p-md-3 p-lg-4">
-			<div class="container-xl">
-
-				<h1 class="app-page-title"><span class="nav-icon"><i class="fa fa-comment"></i></span> Comments</h1>
-
-                <div class="wrapper">
-
-				
-
-
-
-					<?php
-					$result = getTeacherComments();
-					while($row = mysqli_fetch_array($result)){
-					echo  '<div class="box">
-					<i class="fas fa-quote-left quote"></i>
-					<p>'.$row['content'].'</p>
-					<div class="content">
-					<div class="info">
-					
-					<div class="stars">
-									<i class=""></i>
-									<i class=""></i>
-									<i class=""></i>
-									<i class=""></i>
-									<i class=""></i>
-									
-								</div>
-								<div class="job">'.$row['username'].'</div>
-							</div>
-						</div>
-						
-					</div>';
-					}
-					?>
-
-  </div>
-
-				<!--//row-->
+					<div class="job">'.$row['username'].'</div>
+				</div>
 			</div>
-			<!--//container-fluid-->
-		</div>
-		<!--//app-content-->
+			
+		</div>';
+		}
+		?>
 
 	</div>
+
 	<!--//app-wrapper-->
 
 	<!-- Javascript -->

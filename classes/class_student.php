@@ -64,22 +64,54 @@ class Student extends User {
     function submitStudentAnswersAboutTeacher($teacherId, $questionNumber, $answer){
         $sql = "INSERT INTO student_answer_teacher(studentID, teacherID,question_number, answer
         )VALUES(".$this->getId().",".$teacherId.", ".$questionNumber.", ".$answer.");";
-        mysqli_query($GLOBALS['connection'], $sql);
+        try{
+            mysqli_query($GLOBALS['connection'], $sql);
+            return true;
+        }catch(Exception $e){
+            echo "<script>
+            alert('You answered questions about this teacher before');
+            </script>";
+            return false;
+        }
     }
 
     function submitStudentAnswersAboutCo_teacher($co_teacherId, $questionNumber, $answer){
         $sql = "INSERT INTO student_answer_co_teacher(studentID, co_teacherID,question_number, answer
         )VALUES(".$this->getId().",".$co_teacherId.", ".$questionNumber.", ".$answer.");";
-        mysqli_query($GLOBALS['connection'], $sql);
+        try{
+            mysqli_query($GLOBALS['connection'], $sql);
+            return true;
+        }catch(Exception $e){
+            echo "<script>
+            alert('You answered questions about this co-teacher before');
+            </script>";
+            return false;
+        }
     }
 
     function SendCommentsToTeacher($content, $teacherId){
         $sql = 'INSERT INTO comment_to_teacher(content, studentID, teacherID)VALUES("'.$content.'",'.$this->getId().','.$teacherId.');';
-        mysqli_query($GLOBALS['connection'], $sql);
+        try{
+            mysqli_query($GLOBALS['connection'], $sql);
+            return true;
+        }catch(Exception $e){
+            echo "<script>
+            alert('You write comment to this teacher before');
+            </script>";
+            return false;
+        }
     }
     function SendCommentsToCo_teacher($content, $co_teacherId){
         $sql = 'INSERT INTO comment_to_co_teacher(content, studentID, co_teacherID)VALUES("'.$content.'",'.$this->getId().','.$co_teacherId.');';
-        mysqli_query($GLOBALS['connection'], $sql);
+        try{
+            mysqli_query($GLOBALS['connection'], $sql);
+            return true;
+        }catch(Exception $e){
+            echo "<script>
+            alert('You write comment to this co-teacher before');
+            </script>";
+            return false;
+        }
     }
 }
 

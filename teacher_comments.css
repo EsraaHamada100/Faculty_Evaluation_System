@@ -15,13 +15,14 @@ html,body{
   background: rgba(23,162,184,0.3);
 }
 .wrapper{
+  width: 100%;
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .wrapper .box{
  /* the height of the box */
@@ -57,14 +58,14 @@ html,body{
 }
 .box .info .stars i{
   color: #17a2b8;
-}
-/* .box .content .image{
+} 
+.box .content .image{
   height: 75px;
   width: 75px;
   padding: 3px;
   background: #17a2b8;
   border-radius: 50%;
-} */
+}
 .content .image img{
   height: 100%;
   width: 100%;
@@ -91,3 +92,15 @@ html,body{
     color:#17a2b8;
 
 } */
+
+
+
+
+
+
+
+
+
+
+
+
