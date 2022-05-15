@@ -71,11 +71,11 @@ class Teacher extends User implements FacultyMember {
            SELECT teacherID, count(*) AS number_of_ratings
            FROM student_answer_teacher
            WHERE teacherID = ".$_SESSION['id']."
-           UNION
+           UNION ALL
            SELECT teacherID, COUNT(*) AS number_of_ratings
            FROM co_teacher_answer_teacher
            WHERE teacherID = ".$_SESSION['id']."
-           UNION
+           UNION ALL
            SELECT teacherID, COUNT(*) AS number_of_ratings
            FROM admin_answer_teacher
            WHERE teacherID = ".$_SESSION['id']."

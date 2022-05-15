@@ -1,4 +1,5 @@
 <?php
+require_once 'global.php';
 require_once 'user.php';
 require_once 'faculty_member.php';
 
@@ -58,11 +59,41 @@ class Co_teacher implements FacultyMember{
     }
 
     static function getTotalNumberOfRating(){
+        
+        $sql = 
+        "SELECT SUM(number_of_ratings) AS total_rating FROM(
+           SELECT co_teacherID, count(*) AS number_of_ratings
+           FROM student_answer_co_teacher
+           WHERE co_teacherID = ".$_SESSION['id']."
+           UNION ALL
+           SELECT co_teacherID, COUNT(*) AS number_of_ratings
+           FROM teacher_answer_co_teacher
+           WHERE co_teacherID = ".$_SESSION['id']."
+           UNION ALL
+           SELECT co_teacherID, COUNT(*) AS number_of_ratings
+           FROM admin_answer_co_teacher
+           WHERE co_teacherID = ".$_SESSION['id']."
+       ) as t" ;
+
+       $result = mysqli_query($GLOBALS['connection'], $sql);
+       return $result;
 
     }
     static function getTotalNumberOfComments(){
-
+        $sql = "SELECT count(*) AS total_comments
+        FROM comment_to_co_teacher
+        WHERE co_teacherID = ".$_SESSION['id'];
+        $result = mysqli_query($GLOBALS['connection'], $sql);
+        return $result;
         
+    }
+
+    static function submitCo_teacherAnswers( $co_teacherId, $teacherId, $questionNumber, $answer){
+
+        $sql = "INSERT INTO co_teacher_answer_teacher(co_teacherID,teacherID,question_number, answer
+        )VALUES(".$co_teacherId.",".$teacherId.", ".$questionNumber.", ".$answer.");";
+        mysqli_query($GLOBALS['connection'], $sql);
+
     }
 }
 ?>

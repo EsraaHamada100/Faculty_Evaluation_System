@@ -150,7 +150,7 @@
 											<?php
 												
 													
-													$result = getTeacherRatingData();
+													$result = getCo_teacherRatingData();
 													while($row = mysqli_fetch_array($result)){
 															echo '<tr>
 															<th class="cell">'.$row["content"].'</th>

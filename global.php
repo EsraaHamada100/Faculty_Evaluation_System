@@ -51,6 +51,37 @@ function getTeacherRatingData(){
 }
 
 
+function getCo_teacherRatingData(){
+    $stringforSql = 
+    "SELECT  content, COUNT(*) as num_of_answers,round(SUM(student_answer_co_teacher.answer) /COUNT(*), 1)AS rating
+    FROM question
+    JOIN student_answer_co_teacher
+    ON question.number = student_answer_co_teacher.question_number
+    WHERE student_answer_co_teacher.co_teacherID = ".$_SESSION['id']."
+    GROUP BY question.number
+    
+    UNION
+    SELECT content, COUNT(*) as num_of_answers,round(SUM(admin_answer_co_teacher.answer) /COUNT(*), 1)AS rating
+    FROM question
+    JOIN admin_answer_co_teacher
+    ON question.number = admin_answer_co_teacher.question_number
+    WHERE admin_answer_co_teacher.co_teacherID = ".$_SESSION['id']."
+    GROUP BY question.number
+    
+    UNION
+    SELECT content, COUNT(*) as num_of_answers,round(SUM(teacher_answer_co_teacher.answer) /COUNT(*), 1)AS rating
+    FROM question
+    JOIN teacher_answer_co_teacher
+    ON question.number = teacher_answer_co_teacher.question_number
+    WHERE teacher_answer_co_teacher.co_teacherID = ".$_SESSION['id']."
+    GROUP BY question.number;
+    ";
+    $sql =$stringforSql ;
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
+
 function getTeacherComments(){
     $stringforSql = 
     "SELECT student.username, content
@@ -62,6 +93,19 @@ function getTeacherComments(){
     $result = mysqli_query($GLOBALS['connection'], $sql);
     return $result;
 }
+
+function getCo_teacherComments(){
+    $stringforSql = 
+    "SELECT student.username, content
+    FROM comment_to_co_teacher
+    JOIN student
+    ON student.ID = comment_to_co_teacher.studentID
+    WHERE co_teacherID = ".$_SESSION['id']." ;";
+    $sql = $stringforSql ;
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+}
+
 
 function getTeacherCommentsAndRating(){
     $stringforSql = 
@@ -88,6 +132,17 @@ function getQuestionForTeacher(){
     return $result;
 
 }
+
+function getQuestionForCo_teacher(){
+    $sql = 
+    "SELECT number, content
+    FROM question
+    WHERE category_num = 5";
+    $result = mysqli_query($GLOBALS['connection'], $sql);
+    return $result;
+
+}
+
 function co_teachersData() {
     $sql = 'SELECT ID , username FROM co_teacher' ;
     $result = mysqli_query($GLOBALS['connection'], $sql);
@@ -117,6 +172,7 @@ function getQuestionForStudentAboutCo_teacher(){
     $result = mysqli_query($GLOBALS['connection'], $sql);
     return $result;
 }
+
 
 
 

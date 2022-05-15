@@ -89,7 +89,7 @@
 						<!-- view rating -->
 						<li class="nav-item">
 							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-							<a class="nav-link" href="teacher_dashboard.php">
+							<a class="nav-link" href="teacher_rating.php">
 								<span class="nav-icon"><i class="fa fa-star"></i></span>
 								<span class="nav-link-text">View Rating</span>
 							</a>

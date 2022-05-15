@@ -134,7 +134,7 @@
 
 
 					<?php
-					$result = getTeacherComments();
+					$result = getCo_teacherComments();
 					while($row = mysqli_fetch_array($result)){
 					echo  '<div class="box">
 					<i class="fas fa-quote-left quote"></i>

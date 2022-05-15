@@ -20,8 +20,8 @@
 				var selected_option = $('#basicSelect option:selected').text();
 				var selected_option_value = $('#basicSelect option:selected').val();
 				// alert("You have selected co-teacher :  " + selected_option);
-				document.cookie = "co_teacherName = "+selected_option;
-				document.cookie = "co_teacherId = "+selected_option_value;
+				document.cookie = "teacherName = "+selected_option;
+				document.cookie = "teacherId = "+selected_option_value;
 				// alert("You have selected co-teacher with id :  " + selected_option_value);
 			});
 
@@ -172,14 +172,14 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<h1 class="app-page-title">Select Co-Teacher</h1>
-								<form class="settings-form" action="add_answers.php">
+								<h1 class="app-page-title">Select Teacher</h1>
+								<form class="settings-form" action="add_teacher_answers.php">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Faculty</label>
 										<fieldset class="form-group">
 											<select class="form-select" id="basicSelect">
 												<?php 
-													$result = co_teachersData();
+													$result = teachersData();
 													while($row = mysqli_fetch_array($result)){
 														echo '<option value= "'.$row['ID'].'">'.$row['username'].'</option>';
 													}
@@ -200,7 +200,7 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<form class="settings-form" method="POST" action="add_answers.php" >
+								<form class="settings-form" method="POST" action="add_co_teacher_answers.php" >
 									<div class="mb-3">
 										
 										<table class="table app-table-hover mb-0 text-left">
@@ -214,7 +214,7 @@
 											<tbody>
 
 												<?php 
-													$result = getQuestionForTeacher();
+													$result = getQuestionForCo_teacher();
 													while($row = mysqli_fetch_array($result) ){
 														echo '<tr>
 														<td class="cell">'.$row['content'].'</td>
@@ -244,7 +244,7 @@
 							
 													}
 													
-														$result = getQuestionForTeacher();
+														$result = getQuestionForCo_teacher();
 
 														while($row = mysqli_fetch_array($result) ){
 															$key = $row['number'];

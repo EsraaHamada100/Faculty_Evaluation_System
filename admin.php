@@ -92,6 +92,39 @@ class Admin extends User{
             return $result;
     }
 
+
+
+    // I made them static because they are not attached to
+    // spacific admin
+
+    static function numberOfStudents(){
+        $sql = "SELECT COUNT(*) as num_of_students
+        FROM student";
+        $result = mysqli_query($GLOBALS['connection'], $sql);
+        return $result;
+    }
+    
+    static function numberOfFacultyMembers(){
+        $sql = "SELECT SUM(counter) AS num_of_faculty_members 
+        FROM(
+            SELECT COUNT(*) AS counter
+            FROM teacher
+            UNION ALL
+            SELECT COUNT(*) AS counter
+            FROM co_teacher
+        ) AS t";
+        $result = mysqli_query($GLOBALS['connection'], $sql);
+        return $result;
+    
+    }
+
+    static function numberOfQuestions(){
+        $sql = "SELECT COUNT(*) AS num_of_questions
+        FROM question" ;
+        $result = mysqli_query($GLOBALS['connection'], $sql);
+        return $result;
+    }
+    
 }
 
 ?>

@@ -1,3 +1,6 @@
+<?php
+	require_once "admin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,7 +208,14 @@
 							<span class="nav-icon"><i class="fa fa-users fa-5x text-success"></i></span>
 							<div class="app-card-body p-3 p-lg-4">
 								<h4 class="stats-type mb-1">Students</h4>
-								<div class="stats-figure">23</div>
+								<div class="stats-figure">
+									<?php
+										$result = Admin::numberOfStudents();
+										if($row = mysqli_fetch_array($result)){
+											echo $row['num_of_students'];
+										}
+									?>
+								</div>
 							</div>
 							<!--//app-card-body-->
 						</div>
@@ -216,8 +226,15 @@
 						<div class="app-card app-card-stat shadow-sm h-100"><br>
 							<span class="nav-icon"><i class="fa fa-user fa-5x text-info"></i></span>
 							<div class="app-card-body p-3 p-lg-4">
-								<h4 class="stats-type mb-1">Faculty</h4>
-								<div class="stats-figure">6</div>
+								<h4 class="stats-type mb-1">Faculty Members</h4>
+								<div class="stats-figure">
+									<?php
+										$result = Admin::numberOfFacultyMembers();
+										if($row = mysqli_fetch_array($result)){
+											echo $row['num_of_faculty_members'];
+										}
+									?>
+								</div>
 							</div>
 							<!--//app-card-body-->
 						</div>
@@ -229,7 +246,14 @@
 							<span class="nav-icon"><i class="fa fa-book fa-5x text-warning"></i></span>
 							<div class="app-card-body p-3 p-lg-4">
 								<h4 class="stats-type mb-1">Questionnaire</h4>
-								<div class="stats-figure">6</div>
+								<div class="stats-figure">
+									<?php
+											$result = Admin::numberOfQuestions();
+											if($row = mysqli_fetch_array($result)){
+												echo $row['num_of_questions'];
+											}
+									?>
+								</div>
 							</div>
 							<!--//app-card-body-->
 						</div>

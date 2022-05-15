@@ -174,7 +174,7 @@
 							<div class="app-card-body">
 								<h1 class="app-page-title">Select 
 									Teacher</h1>
-								<form class="settings-form" action="add_answers.php">
+								<form class="settings-form" action="add_teacher_answers.php">
 									<div class="mb-3">
 										<label for="setting-input-2" class="form-label">Faculty</label>
 										<fieldset class="form-group">
@@ -201,7 +201,7 @@
 					<div class="col-12 col-md-12">
 						<div class="app-card app-card-settings shadow-sm p-4">
 							<div class="app-card-body">
-								<form class="settings-form" method="POST" action="add_answers.php" >
+								<form class="settings-form" method="POST" action="add_teacher_answers.php" >
 									<div class="mb-3">
 										
 										<table class="table app-table-hover mb-0 text-left">

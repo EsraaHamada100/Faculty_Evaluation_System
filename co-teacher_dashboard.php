@@ -1,5 +1,5 @@
 <?php 
-	require_once "teacher.php" ;
+	require_once "co_teacher.php" ;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,7 +141,7 @@
 								<h4 class="stats-type mb-1">Rating</h4>
 								<div class="stats-figure">
 									<?php 
-										$result = Teacher::getTotalNumberOfRating();
+										$result = Co_teacher::getTotalNumberOfRating();
 										if($row = mysqli_fetch_array($result)){
 											echo $row['total_rating'];
 										}
@@ -161,7 +161,7 @@
 								<h4 class="stats-type mb-1">comments</h4>
 								<div class="stats-figure">
 									<?php
-										$result = Teacher::getTotalNumberOfComments();
+										$result = Co_teacher::getTotalNumberOfComments();
 										if($row = mysqli_fetch_array($result)){
 											echo $row['total_comments'];
 										}
