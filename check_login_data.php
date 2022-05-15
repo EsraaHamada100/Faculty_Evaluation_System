@@ -22,7 +22,7 @@ function findUser($tableName, $pageLink){
     }
 }
 function userNotFound(){
-    echo "<script>
+     echo "<script>
     alert('Make sure that you entered a correct username and password');
     </script>";
     // header("Location: login.php");
