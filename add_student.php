@@ -204,18 +204,18 @@ require 'global.php';
 							<div class="app-card-body">
 								<form class="settings-form" method="post" action="check_add_student.php">
 									<div class="mb-3">
-										<label for="setting-input-2" class="form-label">User Name</label>
-										<input type="text" name="username" class="form-control" id="setting-input-2" value="" required>
-									</div>
-									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">ID Number</label>
 										<input type="string" name = "ID" class="form-control" id="setting-input-3" value="auto.." disabled>
+									</div>
+									<div class="mb-3">
+										<label for="setting-input-2" class="form-label">User Name</label>
+										<input type="text" name="username" class="form-control" id="setting-input-2" value="" required>
 									</div>
 									<div class="mb-3">
 										<label for="setting-input-3" class="form-label">Password</label>
 										<input type="password" name="password" class="form-control" id="setting-input-3" value="">
 									</div>
-									<button type="submit"   class="btn app-btn-primary" onclick="alert('added Successed')">Save</button>
+									<button type="submit"   class="btn app-btn-primary" >Save</button>
 
 									<!-- <button type="submit"   class="btn app-btn-primary">Save</button> -->
 								</form>

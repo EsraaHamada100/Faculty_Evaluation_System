@@ -213,7 +213,7 @@ require 'global.php';
 										<input type="password"  name="password" class="form-control" id="setting-input-3" value="">
 									</div>
 
-									<button type="submit"   class="btn app-btn-primary" onclick="alert('added Successed')">Save</button>
+									<button type="submit"   class="btn app-btn-primary" >Save</button>
 								</form>
 							</div>
 							<!--//app-card-body-->
